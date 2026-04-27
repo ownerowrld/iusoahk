@@ -1,39 +1,39 @@
-# iusoahk--[[
+--[[
     ██╗  ██╗██╗  ██╗ █████╗  ██████╗ ███████╗    ██╗   ██╗██╗
- safeWrite(p, data)██║ ██╔╝██║ ██║██╔══██╗██╔═══██╗██╔════╝ ██║ ██║██║
-    █████╔╝ ███████║███████║██║ ██║███████╗ ██║ ██║██║
-    ██╔═██╗ ██╔══██║██╔══██║██║ ██║╚════██║ ██║ ██║██║
-    ██║ ██╗██║ ██║██║ ██║╚██████╔╝███████║ ╚██████╔╝██║
-    ╚═╝ ╚═╝╚═╝ ╚═╝╚═╝ ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝
+    ██║ ██╔╝██║  ██║██╔══██╗██╔═══██╗██╔════╝    ██║   ██║██║
+    █████╔╝ ███████║███████║██║   ██║███████╗    ██║   ██║██║
+    ██╔═██╗ ██╔══██║██╔══██║██║   ██║╚════██║    ██║   ██║██║
+    ██║  ██╗██║  ██║██║  ██║╚██████╔╝███████║    ╚██████╔╝██║
+    ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝     ╚═════╝ ╚═╝
 
- Câmera = espaço de trabalho.CurrentCameraKhaosUI — Biblioteca de interface do usuário do Roblox Executor
-    Compatível: Móvel (Delta, Codex, etc) + PC (Xeno, Solara, etc)
+    KhaosUI — Roblox Executor UI Library
+    Compatível: Mobile (Delta, Codex, etc) + PC (Xeno, Solara, etc)
     Autor: Orial_Dev
     Versão: 1.0.0
 --]]
 
 -- ══════════════════════════════════════════════════════════════
--- SERVIÇOS E COMPATIBILIDADE
+-- SERVICES & COMPAT
 -- ══════════════════════════════════════════════════════════════
--- DEBUG: confirme que uma biblioteca carregou
-imprimir("[KhaosUI] Carregando... Executor:", identificador executor e identificarexecutor() ou "desconhecido")
-avistar("[KhaosUI] Se você vir isso, a biblioteca está acontecendo executada corretamente.")
 
-local Jogadores = jogo:GetService("Jogadores")
-local RunService = jogo:GetService("ExecutarServiço")
-local UserInputService = jogo:GetService("Serviço de entrada do usuário")
-local TweenService = jogo:GetService("Serviço Intermediário")
-local HttpService = jogo:GetService("Serviço HTTP")
+local Players            = game:GetService("Players")
+local RunService         = game:GetService("RunService")
+local UserInputService   = game:GetService("UserInputService")
+local TweenService       = game:GetService("TweenService")
+local HttpService        = game:GetService("HttpService")
 
-local LocalPlayer = Jogadores.LocalPlayer
-local Mouse = LocalPlayer:GetMouse()
-local Câmara = espaço de trabalho.CurrentCamera
+local LocalPlayer        = Players.LocalPlayer
+local Mouse              = LocalPlayer:GetMouse()
+local Camera             = workspace.CurrentCamera
 
--- Detectar celular
-local IsMobile = UserInputService.TouchEnabled e não UserInputService.Teclado habilitado
+-- Detect mobile
+-- Detecção de mobile mais robusta (igual ao Fluent)
+local IsMobile = UserInputService.TouchEnabled
+    and not UserInputService.KeyboardEnabled
+    and not UserInputService.MouseEnabled
 
--- E/S de arquivo seguro (compatível com Delta, Codex, Xeno, Solara)
-local função safeWrite(p, dados)
+-- Safe file I/O (Delta, Codex, Xeno, Solara compatible)
+local function safeWrite(p, data)
     pcall(function() if writefile then writefile(p, data) end end)
 end
 local function safeRead(p)
@@ -307,37 +307,40 @@ function KhaosUI:CreateWindow(opts)
     safeMkdir(_folder .. "/configs")
 
     -- ── GUI ROOT ──
-    -- Compatible: Delta, Codex (mobile) + Xeno, Solara (PC)
-    local gui
+    -- Ordem de prioridade igual ao Fluent:
+    -- 1. gethui()        — Xeno, Solara, AWP
+    -- 2. syn.protect_gui — Synapse X legado
+    -- 3. CoreGui direto  — Delta, Codex mobile
+    -- 4. PlayerGui       — fallback Studio
+    local gui = Instance.new("ScreenGui")
+    gui.Name           = "KhaosUI"
+    gui.ResetOnSpawn   = false
+    gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    gui.DisplayOrder   = 999
 
-    -- CoreGui method (most executors)
-    local ok = pcall(function()
-        gui = Instance.new("ScreenGui")
-        gui.Name           = "KhaosUI"
-        gui.ResetOnSpawn   = false
-        gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-        gui.DisplayOrder   = 999
-        if syn and syn.protect_gui then
+    local guiParented = false
+
+    if not guiParented and typeof(gethui) == "function" then
+        pcall(function() gui.Parent = gethui(); guiParented = true end)
+    end
+
+    if not guiParented and typeof(syn) == "table" and typeof(syn.protect_gui) == "function" then
+        pcall(function()
             syn.protect_gui(gui)
             gui.Parent = game:GetService("CoreGui")
-        elseif gethui then
-            gui.Parent = gethui()
-        elseif game:GetService("RunService"):IsStudio() then
-            gui.Parent = LocalPlayer:WaitForChild("PlayerGui")
-        else
-            -- Delta / mobile fallback — direct CoreGui
-            gui.Parent = game:GetService("CoreGui")
-        end
-    end)
+            guiParented = true
+        end)
+    end
 
-    -- Final fallback: PlayerGui
-    if not ok or not gui then
-        gui = Instance.new("ScreenGui")
-        gui.Name           = "KhaosUI"
-        gui.ResetOnSpawn   = false
-        gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-        gui.DisplayOrder   = 999
-        gui.Parent         = LocalPlayer:WaitForChild("PlayerGui")
+    if not guiParented then
+        pcall(function()
+            gui.Parent = game:GetService("CoreGui")
+            guiParented = true
+        end)
+    end
+
+    if not guiParented then
+        gui.Parent = LocalPlayer:WaitForChild("PlayerGui")
     end
 
     buildNotifyHolder(gui)
@@ -356,19 +359,17 @@ function KhaosUI:CreateWindow(opts)
     Util.Create("UICorner", {Parent = Window, CornerRadius = UDim.new(0, 13)})
     Util.Create("UIStroke", {Parent = Window, Color = Theme.PurpleMid, Thickness = 1, Transparency = 0.65})
 
-    -- drop shadow
-    Util.Create("ImageLabel", {
+    -- drop shadow (Frame puro, sem assets externos — compatível com todos executors)
+    local _shadow = Util.Create("Frame", {
         Parent = Window,
-        BackgroundTransparency = 1,
-        Image = "rbxassetid://6015897843",
-        ImageColor3 = Color3.fromRGB(0,0,0),
-        ImageTransparency = 0.4,
-        ScaleType = Enum.ScaleType.Slice,
-        SliceCenter = Rect.new(49,49,450,450),
-        Size = UDim2.new(1, 40, 1, 40),
-        Position = UDim2.new(0,-20,0,-20),
+        BackgroundColor3 = Color3.fromRGB(0, 0, 0),
+        BackgroundTransparency = 0.55,
+        BorderSizePixel = 0,
+        Size = UDim2.new(1, 20, 1, 20),
+        Position = UDim2.new(0, -10, 0, -10),
         ZIndex = 1,
     })
+    Util.Create("UICorner", {Parent = _shadow, CornerRadius = UDim.new(0, 18)})
 
     -- ── TITLEBAR ──
     local Titlebar = Util.Create("Frame", {
@@ -2521,58 +2522,79 @@ function KhaosUI:CreateWindow(opts)
             end
             for n, d in pairs(configs) do d.autoload = false end
             local togOn = not configs[activeCfg].autoload
-     configs[activeCfg].autoload = togOn
-     autoloadCfg = togOn e activeCfg ou nulo
-     alSub.Text = togOn e ('"'..activeCfg..'"') ou "Nenhuma configuração selecionada"
-     se togOn então
-     Util.Tween(alTrack, {BackgroundColor3 = Theme.PurpleDeep}, 0,2)
-     Util.Tween(alKnob, {Posição = UDim2.new(1,-15,0,5,-6,5), BackgroundColor3 = Color3.fromRGB(220,200,255)}, 0,2, Enum.EasingStyle.Back)
-     outro
-     Util.Tween(alTrack, {BackgroundColor3 = Theme.BgInput}, 0,2)
-     Util.Tween(alKnob, {Posição = UDim2.new(0,2,0.5,-6.5), BackgroundColor3 = Tema.Texto3}, 0.2, Enum.EasingStyle.Voltar)
-     fim
-     persistConfigs()
-     reconstituirCfgMenu()
-     fim
-    fim)
+            configs[activeCfg].autoload = togOn
+            autoloadCfg = togOn and activeCfg or nil
+            alSub.Text = togOn and ('"'..activeCfg..'"') or "No config selected"
+            if togOn then
+                Util.Tween(alTrack, {BackgroundColor3 = Theme.PurpleDeep}, 0.2)
+                Util.Tween(alKnob,  {Position = UDim2.new(1,-15,0.5,-6.5), BackgroundColor3 = Color3.fromRGB(220,200,255)}, 0.2, Enum.EasingStyle.Back)
+            else
+                Util.Tween(alTrack, {BackgroundColor3 = Theme.BgInput}, 0.2)
+                Util.Tween(alKnob,  {Position = UDim2.new(0,2,0.5,-6.5), BackgroundColor3 = Theme.Text3}, 0.2, Enum.EasingStyle.Back)
+            end
+            persistConfigs()
+            rebuildCfgMenu()
+        end
+    end)
 
-    -- Carregar configurações persistentes na inicialização
-    tarefa.delay(0,5, loadPersistedConfigs)
+    -- Load persisted configs on start
+    task.delay(0.5, loadPersistedConfigs)
 
-    -- Expor Notificar globalmente sem WindowObj
-    WindowObj.Notify = Notificar
-    WindowObj.Options = _opções
+    -- Expose Notify globally on WindowObj
+    WindowObj.Notify = Notify
+    WindowObj.Options = _options  -- acesso global aos controles registrados
 
-    -- Guia de seleção auxiliar
-    função WindowObj:SelectTab(índice)
-     aba local = self._tabs[índice]
-     se tab entrada tab._btn.MouseButton1Click:Fire() fim
-    fim
+    -- SelectTab helper
+    function WindowObj:SelectTab(index)
+        local tab = self._tabs[index]
+        if tab then
+            -- Ativa a tab diretamente sem depender de :Fire() (não funciona em todos executors)
+            for _, t in pairs(self._tabs) do
+                local ok, _ = pcall(function()
+                    t._btn.BackgroundColor3 = Theme.BgHover
+                    t._btn.TextColor3 = Theme.Text2
+                    t._btn.BackgroundTransparency = 1
+                    t._bar.Size = UDim2.fromOffset(2, 0)
+                    t._bar.BackgroundTransparency = 1
+                    t._page.Visible = false
+                end)
+            end
+            pcall(function()
+                tab._btn.BackgroundColor3 = Theme.PurpleVivid
+                tab._btn.BackgroundTransparency = 0.86
+                tab._btn.TextColor3 = Theme.PurpleVivid
+                tab._bar.BackgroundTransparency = 0
+                tab._bar.Size = UDim2.new(0, 2, 0, tab._btn.AbsoluteSize.Y - 12)
+                tab._page.Visible = true
+                self._activeTab = tab
+            end)
+        end
+    end
 
-    -- Auxiliares SetTitle / SetSubtitle
-    função WindowObj:SetTitle(nome, acento)
-     se TitleLabel então
-     TitleLabel.Text = nome .. (sotaque e " " .. acento ou "")
-     fim
-    fim
+    -- SetTitle / SetSubtitle helpers
+    function WindowObj:SetTitle(name, accent)
+        if TitleLabel then
+            TitleLabel.Text = name .. (accent and " " .. accent or "")
+        end
+    end
 
-    função WindowObj:SetSubtitle(sub)
-     -- encontrar protocolo de legenda
-     para _, v em pares(TitleTextHolder:GetChildren()) faça
-     se v:IsA("TextLabel") e v.LayoutOrder == 2 entidade
-     v.Texto = sub
-     fim
-     fim
-    fim
+    function WindowObj:SetSubtitle(sub)
+        -- find subtitle label
+        for _, v in pairs(TitleTextHolder:GetChildren()) do
+            if v:IsA("TextLabel") and v.LayoutOrder == 2 then
+                v.Text = sub
+            end
+        end
+    end
 
-    tabela.insert(_windows, WindowObj)
-    janela retornarObj
-fim
+    table.insert(_windows, WindowObj)
+    return WindowObj
+end
 
 -- ══════════════════════════════════════════════════════════════
--- BIBLIOTECA DE RETORNO
+-- RETURN LIBRARY
 -- ══════════════════════════════════════════════════════════════
-KhaosUI.Opções = _opções
-KhaosUI.Notify = Notificar
+KhaosUI.Options = _options
+KhaosUI.Notify  = Notify
 
-retornar KhaosUI
+return KhaosUI
