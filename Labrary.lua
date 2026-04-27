@@ -1,39 +1,39 @@
 # iusoahk--[[
     ██╗  ██╗██╗  ██╗ █████╗  ██████╗ ███████╗    ██╗   ██╗██╗
-    ██║ ██╔╝██║  ██║██╔══██╗██╔═══██╗██╔════╝    ██║   ██║██║
-    █████╔╝ ███████║███████║██║   ██║███████╗    ██║   ██║██║
-    ██╔═██╗ ██╔══██║██╔══██║██║   ██║╚════██║    ██║   ██║██║
-    ██║  ██╗██║  ██║██║  ██║╚██████╔╝███████║    ╚██████╔╝██║
-    ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝     ╚═════╝ ╚═╝
+ safeWrite(p, data)██║ ██╔╝██║ ██║██╔══██╗██╔═══██╗██╔════╝ ██║ ██║██║
+    █████╔╝ ███████║███████║██║ ██║███████╗ ██║ ██║██║
+    ██╔═██╗ ██╔══██║██╔══██║██║ ██║╚════██║ ██║ ██║██║
+    ██║ ██╗██║ ██║██║ ██║╚██████╔╝███████║ ╚██████╔╝██║
+    ╚═╝ ╚═╝╚═╝ ╚═╝╚═╝ ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝
 
-    KhaosUI — Roblox Executor UI Library
-    Compatível: Mobile (Delta, Codex, etc) + PC (Xeno, Solara, etc)
+ Câmera = espaço de trabalho.CurrentCameraKhaosUI — Biblioteca de interface do usuário do Roblox Executor
+    Compatível: Móvel (Delta, Codex, etc) + PC (Xeno, Solara, etc)
     Autor: Orial_Dev
     Versão: 1.0.0
 --]]
 
 -- ══════════════════════════════════════════════════════════════
--- SERVICES & COMPAT
+-- SERVIÇOS E COMPATIBILIDADE
 -- ══════════════════════════════════════════════════════════════
--- DEBUG: confirma que a library carregou
-print("[KhaosUI] Loading... Executor:", identifyexecutor and identifyexecutor() or "unknown")
-warn("[KhaosUI] If you see this, the library is executing correctly.")
+-- DEBUG: confirme que uma biblioteca carregou
+imprimir("[KhaosUI] Carregando... Executor:", identificador executor e identificarexecutor() ou "desconhecido")
+avistar("[KhaosUI] Se você vir isso, a biblioteca está acontecendo executada corretamente.")
 
-local Players            = game:GetService("Players")
-local RunService         = game:GetService("RunService")
-local UserInputService   = game:GetService("UserInputService")
-local TweenService       = game:GetService("TweenService")
-local HttpService        = game:GetService("HttpService")
+local Jogadores = jogo:GetService("Jogadores")
+local RunService = jogo:GetService("ExecutarServiço")
+local UserInputService = jogo:GetService("Serviço de entrada do usuário")
+local TweenService = jogo:GetService("Serviço Intermediário")
+local HttpService = jogo:GetService("Serviço HTTP")
 
-local LocalPlayer        = Players.LocalPlayer
-local Mouse              = LocalPlayer:GetMouse()
-local Camera             = workspace.CurrentCamera
+local LocalPlayer = Jogadores.LocalPlayer
+local Mouse = LocalPlayer:GetMouse()
+local Câmara = espaço de trabalho.CurrentCamera
 
--- Detect mobile
-local IsMobile = UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
+-- Detectar celular
+local IsMobile = UserInputService.TouchEnabled e não UserInputService.Teclado habilitado
 
--- Safe file I/O (Delta, Codex, Xeno, Solara compatible)
-local function safeWrite(p, data)
+-- E/S de arquivo seguro (compatível com Delta, Codex, Xeno, Solara)
+local função safeWrite(p, dados)
     pcall(function() if writefile then writefile(p, data) end end)
 end
 local function safeRead(p)
