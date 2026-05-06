@@ -3,1652 +3,1577 @@
 88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
 88      88    88    88            odD'      88      88    88 88ooo88 
 88  ooo 88    88    88          .88'        88      88    88 88~~~88 
-88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
- Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP
 ]=]
 
--- Instances: 182 | Scripts: 1 | Modules: 0 | Tags: 0
-local G2L = {};
-
--- StarterGui.KhaosHub
-G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
-G2L["1"]["IgnoreGuiInset"] = true;
-G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
-G2L["1"]["Name"] = [[KhaosHub]];
-G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
-G2L["1"]["ResetOnSpawn"] = false;
-
-
--- StarterGui.KhaosHub.ToggleUI
-G2L["2"] = Instance.new("ImageButton", G2L["1"]);
-G2L["2"]["BorderSizePixel"] = 0;
-G2L["2"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["2"]["BackgroundColor3"] = Color3.fromRGB(3, 3, 3);
-G2L["2"]["ZIndex"] = 10;
-G2L["2"]["Image"] = [[rbxassetid://109958086553778]];
-G2L["2"]["Size"] = UDim2.new(0, 36, 0, 36);
-G2L["2"]["Name"] = [[ToggleUI]];
-G2L["2"]["Position"] = UDim2.new(0.5, -18, 0, 10);
-
-
--- StarterGui.KhaosHub.ToggleUI.UICorner
-G2L["3"] = Instance.new("UICorner", G2L["2"]);
-G2L["3"]["CornerRadius"] = UDim.new(0, 6);
-
-
--- StarterGui.KhaosHub.ToggleUI.UIStroke
-G2L["4"] = Instance.new("UIStroke", G2L["2"]);
-G2L["4"]["Color"] = Color3.fromRGB(120, 0, 188);
-G2L["4"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window
-G2L["5"] = Instance.new("Frame", G2L["1"]);
-G2L["5"]["ZIndex"] = 2;
-G2L["5"]["BackgroundColor3"] = Color3.fromRGB(3, 3, 3);
-G2L["5"]["ClipsDescendants"] = true;
-G2L["5"]["Size"] = UDim2.new(0, 580, 0, 460);
-G2L["5"]["Position"] = UDim2.new(0.5, -290, 0.5, -230);
-G2L["5"]["Name"] = [[Window]];
-
-
--- StarterGui.KhaosHub.Window.UICorner
-G2L["6"] = Instance.new("UICorner", G2L["5"]);
-
-
-
--- StarterGui.KhaosHub.Window.UIStroke
-G2L["7"] = Instance.new("UIStroke", G2L["5"]);
-G2L["7"]["Color"] = Color3.fromRGB(32, 0, 54);
-G2L["7"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Titlebar
-G2L["8"] = Instance.new("Frame", G2L["5"]);
-G2L["8"]["ZIndex"] = 3;
-G2L["8"]["BackgroundColor3"] = Color3.fromRGB(3, 3, 3);
-G2L["8"]["Size"] = UDim2.new(1, 0, 0, 44);
-G2L["8"]["Name"] = [[Titlebar]];
-G2L["8"]["BackgroundTransparency"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Titlebar.TitleDivider
-G2L["9"] = Instance.new("Frame", G2L["8"]);
-G2L["9"]["BorderSizePixel"] = 0;
-G2L["9"]["BackgroundColor3"] = Color3.fromRGB(23, 0, 38);
-G2L["9"]["Size"] = UDim2.new(1, 0, 0, 1);
-G2L["9"]["Position"] = UDim2.new(0, 0, 1, -1);
-G2L["9"]["Name"] = [[TitleDivider]];
-
-
--- StarterGui.KhaosHub.Window.Titlebar.Logo
-G2L["a"] = Instance.new("ImageLabel", G2L["8"]);
-G2L["a"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["a"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["a"]["Image"] = [[rbxassetid://121724126392757]];
-G2L["a"]["Size"] = UDim2.new(0, 28, 0, 28);
-G2L["a"]["Name"] = [[Logo]];
-G2L["a"]["Position"] = UDim2.new(0, 10, 0, 8);
-
-
--- StarterGui.KhaosHub.Window.Titlebar.Logo.UICorner
-G2L["b"] = Instance.new("UICorner", G2L["a"]);
-G2L["b"]["CornerRadius"] = UDim.new(0, 4);
-
-
--- StarterGui.KhaosHub.Window.Titlebar.TitleName
-G2L["c"] = Instance.new("TextLabel", G2L["8"]);
-G2L["c"]["TextSize"] = 14;
-G2L["c"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["c"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["c"]["TextColor3"] = Color3.fromRGB(177, 107, 239);
-G2L["c"]["BackgroundTransparency"] = 1;
-G2L["c"]["Size"] = UDim2.new(0, 200, 0, 16);
-G2L["c"]["Text"] = [[Khaos Hub]];
-G2L["c"]["Name"] = [[TitleName]];
-G2L["c"]["Position"] = UDim2.new(0, 46, 0, 6);
-
-
--- StarterGui.KhaosHub.Window.Titlebar.TitleSub
-G2L["d"] = Instance.new("TextLabel", G2L["8"]);
-G2L["d"]["TextSize"] = 10;
-G2L["d"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["d"]["TextColor3"] = Color3.fromRGB(120, 52, 171);
-G2L["d"]["BackgroundTransparency"] = 1;
-G2L["d"]["Size"] = UDim2.new(0, 200, 0, 12);
-G2L["d"]["Text"] = [[by kw]];
-G2L["d"]["Name"] = [[TitleSub]];
-G2L["d"]["Position"] = UDim2.new(0, 46, 0, 24);
-
-
--- StarterGui.KhaosHub.Window.Titlebar.CloseBtn
-G2L["e"] = Instance.new("TextButton", G2L["8"]);
-G2L["e"]["TextSize"] = 11;
-G2L["e"]["TextColor3"] = Color3.fromRGB(205, 52, 52);
-G2L["e"]["BackgroundColor3"] = Color3.fromRGB(27, 0, 0);
-G2L["e"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["e"]["Size"] = UDim2.new(0, 20, 0, 20);
-G2L["e"]["Text"] = [[✕]];
-G2L["e"]["Name"] = [[CloseBtn]];
-G2L["e"]["Position"] = UDim2.new(1, -30, 0, 12);
-
-
--- StarterGui.KhaosHub.Window.Titlebar.CloseBtn.UICorner
-G2L["f"] = Instance.new("UICorner", G2L["e"]);
-G2L["f"]["CornerRadius"] = UDim.new(0, 3);
-
-
--- StarterGui.KhaosHub.Window.Titlebar.CloseBtn.UIStroke
-G2L["10"] = Instance.new("UIStroke", G2L["e"]);
-G2L["10"]["Color"] = Color3.fromRGB(75, 0, 0);
-G2L["10"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body
-G2L["11"] = Instance.new("Frame", G2L["5"]);
-G2L["11"]["BorderMode"] = Enum.BorderMode.Inset;
-G2L["11"]["ClipsDescendants"] = true;
-G2L["11"]["Size"] = UDim2.new(1, 0, 1, -44);
-G2L["11"]["Position"] = UDim2.new(0, 0, 0, 44);
-G2L["11"]["Name"] = [[Body]];
-G2L["11"]["BackgroundTransparency"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Body.Sidebar
-G2L["12"] = Instance.new("Frame", G2L["11"]);
-G2L["12"]["BorderSizePixel"] = 0;
-G2L["12"]["BackgroundColor3"] = Color3.fromRGB(3, 3, 3);
-G2L["12"]["Size"] = UDim2.new(0, 135, 1, 0);
-G2L["12"]["Name"] = [[Sidebar]];
-
-
--- StarterGui.KhaosHub.Window.Body.Sidebar.SidebarDivider
-G2L["13"] = Instance.new("Frame", G2L["12"]);
-G2L["13"]["BorderSizePixel"] = 0;
-G2L["13"]["BackgroundColor3"] = Color3.fromRGB(23, 0, 38);
-G2L["13"]["Size"] = UDim2.new(0, 1, 1, 0);
-G2L["13"]["Position"] = UDim2.new(1, -1, 0, 0);
-G2L["13"]["Name"] = [[SidebarDivider]];
-
-
--- StarterGui.KhaosHub.Window.Body.Sidebar.UIListLayout
-G2L["14"] = Instance.new("UIListLayout", G2L["12"]);
-G2L["14"]["Wraps"] = true;
-G2L["14"]["Padding"] = UDim.new(0, 4);
-G2L["14"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- StarterGui.KhaosHub.Window.Body.Sidebar.UIPadding
-G2L["15"] = Instance.new("UIPadding", G2L["12"]);
-G2L["15"]["PaddingTop"] = UDim.new(0, 6);
-G2L["15"]["PaddingBottom"] = UDim.new(0, 6);
-
-
--- StarterGui.KhaosHub.Window.Body.Sidebar.MainTabBtn
-G2L["16"] = Instance.new("TextButton", G2L["12"]);
-G2L["16"]["BorderSizePixel"] = 0;
-G2L["16"]["AutoButtonColor"] = false;
-G2L["16"]["BackgroundColor3"] = Color3.fromRGB(15, 0, 25);
-G2L["16"]["Size"] = UDim2.new(1, 0, 0, 36);
-G2L["16"]["LayoutOrder"] = 1;
-G2L["16"]["Text"] = [[]];
-G2L["16"]["Name"] = [[MainTabBtn]];
-
-
--- StarterGui.KhaosHub.Window.Body.Sidebar.MainTabBtn.Indicator
-G2L["17"] = Instance.new("Frame", G2L["16"]);
-G2L["17"]["BackgroundColor3"] = Color3.fromRGB(120, 0, 188);
-G2L["17"]["Size"] = UDim2.new(0, 2, 0, 36);
-G2L["17"]["Name"] = [[Indicator]];
-
-
--- StarterGui.KhaosHub.Window.Body.Sidebar.MainTabBtn.Icon
-G2L["18"] = Instance.new("TextLabel", G2L["16"]);
-G2L["18"]["TextSize"] = 14;
-G2L["18"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["18"]["TextColor3"] = Color3.fromRGB(177, 107, 239);
-G2L["18"]["BackgroundTransparency"] = 1;
-G2L["18"]["Size"] = UDim2.new(0, 15, 0, 20);
-G2L["18"]["Text"] = [[☰]];
-G2L["18"]["Name"] = [[Icon]];
-G2L["18"]["Position"] = UDim2.new(0, 12, 0, 8);
-
-
--- StarterGui.KhaosHub.Window.Body.Sidebar.MainTabBtn.Label
-G2L["19"] = Instance.new("TextLabel", G2L["16"]);
-G2L["19"]["TextSize"] = 12;
-G2L["19"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["19"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["19"]["TextColor3"] = Color3.fromRGB(177, 107, 239);
-G2L["19"]["BackgroundTransparency"] = 1;
-G2L["19"]["Size"] = UDim2.new(0, 80, 0, 20);
-G2L["19"]["Text"] = [[Main]];
-G2L["19"]["Name"] = [[Label]];
-G2L["19"]["Position"] = UDim2.new(0, 31, 0, 8);
-
-
--- StarterGui.KhaosHub.Window.Body.Sidebar.MainTabBtn.Arrow
-G2L["1a"] = Instance.new("TextLabel", G2L["16"]);
-G2L["1a"]["TextSize"] = 12;
-G2L["1a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["1a"]["TextColor3"] = Color3.fromRGB(69, 69, 69);
-G2L["1a"]["BackgroundTransparency"] = 1;
-G2L["1a"]["Size"] = UDim2.new(0, 10, 0, 20);
-G2L["1a"]["Text"] = [[›]];
-G2L["1a"]["Name"] = [[Arrow]];
-G2L["1a"]["Position"] = UDim2.new(1, -18, 0, 8);
-
-
--- StarterGui.KhaosHub.Window.Body.Sidebar.SettingsTabBtn
-G2L["1b"] = Instance.new("TextButton", G2L["12"]);
-G2L["1b"]["BorderSizePixel"] = 0;
-G2L["1b"]["AutoButtonColor"] = false;
-G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(3, 3, 3);
-G2L["1b"]["Size"] = UDim2.new(1, 0, 0, 36);
-G2L["1b"]["LayoutOrder"] = 2;
-G2L["1b"]["Text"] = [[]];
-G2L["1b"]["Name"] = [[SettingsTabBtn]];
-
-
--- StarterGui.KhaosHub.Window.Body.Sidebar.SettingsTabBtn.Indicator
-G2L["1c"] = Instance.new("Frame", G2L["1b"]);
-G2L["1c"]["Visible"] = false;
-G2L["1c"]["BackgroundColor3"] = Color3.fromRGB(120, 0, 188);
-G2L["1c"]["Size"] = UDim2.new(0, 2, 0, 36);
-G2L["1c"]["Name"] = [[Indicator]];
-
-
--- StarterGui.KhaosHub.Window.Body.Sidebar.SettingsTabBtn.Icon
-G2L["1d"] = Instance.new("TextLabel", G2L["1b"]);
-G2L["1d"]["TextSize"] = 14;
-G2L["1d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["1d"]["TextColor3"] = Color3.fromRGB(69, 69, 69);
-G2L["1d"]["BackgroundTransparency"] = 1;
-G2L["1d"]["Size"] = UDim2.new(0, 15, 0, 20);
-G2L["1d"]["Text"] = [[⚙]];
-G2L["1d"]["Name"] = [[Icon]];
-G2L["1d"]["Position"] = UDim2.new(0, 12, 0, 8);
-
-
--- StarterGui.KhaosHub.Window.Body.Sidebar.SettingsTabBtn.Label
-G2L["1e"] = Instance.new("TextLabel", G2L["1b"]);
-G2L["1e"]["TextSize"] = 12;
-G2L["1e"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["1e"]["TextColor3"] = Color3.fromRGB(69, 69, 69);
-G2L["1e"]["BackgroundTransparency"] = 1;
-G2L["1e"]["Size"] = UDim2.new(0, 80, 0, 20);
-G2L["1e"]["Text"] = [[Settings]];
-G2L["1e"]["Name"] = [[Label]];
-G2L["1e"]["Position"] = UDim2.new(0, 31, 0, 8);
-
-
--- StarterGui.KhaosHub.Window.Body.Sidebar.SettingsTabBtn.Arrow
-G2L["1f"] = Instance.new("TextLabel", G2L["1b"]);
-G2L["1f"]["TextSize"] = 12;
-G2L["1f"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["1f"]["TextColor3"] = Color3.fromRGB(69, 69, 69);
-G2L["1f"]["BackgroundTransparency"] = 1;
-G2L["1f"]["Size"] = UDim2.new(0, 10, 0, 20);
-G2L["1f"]["Text"] = [[›]];
-G2L["1f"]["Name"] = [[Arrow]];
-G2L["1f"]["Position"] = UDim2.new(1, -18, 0, 8);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea
-G2L["20"] = Instance.new("Frame", G2L["11"]);
-G2L["20"]["BorderSizePixel"] = 0;
-G2L["20"]["BackgroundColor3"] = Color3.fromRGB(3, 3, 3);
-G2L["20"]["ClipsDescendants"] = true;
-G2L["20"]["Size"] = UDim2.new(1, -135, 1, 0);
-G2L["20"]["Position"] = UDim2.new(0, 135, 0, 0);
-G2L["20"]["Name"] = [[ContentArea]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage
-G2L["21"] = Instance.new("ScrollingFrame", G2L["20"]);
-G2L["21"]["BorderSizePixel"] = 0;
-G2L["21"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
-G2L["21"]["Name"] = [[MainPage]];
-G2L["21"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-G2L["21"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["21"]["ScrollBarImageColor3"] = Color3.fromRGB(62, 0, 108);
-G2L["21"]["ScrollBarThickness"] = 3;
-G2L["21"]["BackgroundTransparency"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.UIListLayout
-G2L["22"] = Instance.new("UIListLayout", G2L["21"]);
-G2L["22"]["Padding"] = UDim.new(0, 5);
-G2L["22"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.UIPadding
-G2L["23"] = Instance.new("UIPadding", G2L["21"]);
-G2L["23"]["PaddingTop"] = UDim.new(0, 7);
-G2L["23"]["PaddingRight"] = UDim.new(0, 7);
-G2L["23"]["PaddingLeft"] = UDim.new(0, 7);
-G2L["23"]["PaddingBottom"] = UDim.new(0, 7);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat
-G2L["24"] = Instance.new("Frame", G2L["21"]);
-G2L["24"]["BackgroundColor3"] = Color3.fromRGB(5, 5, 5);
-G2L["24"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-G2L["24"]["Size"] = UDim2.new(1, 0, 0, 32);
-G2L["24"]["Name"] = [[ComponentesSuportadosCat]];
-G2L["24"]["LayoutOrder"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.UICorner
-G2L["25"] = Instance.new("UICorner", G2L["24"]);
-G2L["25"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.UIStroke
-G2L["26"] = Instance.new("UIStroke", G2L["24"]);
-G2L["26"]["Color"] = Color3.fromRGB(25, 0, 41);
-G2L["26"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Header
-G2L["27"] = Instance.new("TextButton", G2L["24"]);
-G2L["27"]["AutoButtonColor"] = false;
-G2L["27"]["BackgroundTransparency"] = 1;
-G2L["27"]["Size"] = UDim2.new(1, 0, 0, 32);
-G2L["27"]["Text"] = [[]];
-G2L["27"]["Name"] = [[Header]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Header.Title
-G2L["28"] = Instance.new("TextLabel", G2L["27"]);
-G2L["28"]["TextSize"] = 12;
-G2L["28"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["28"]["TextColor3"] = Color3.fromRGB(145, 97, 188);
-G2L["28"]["BackgroundTransparency"] = 1;
-G2L["28"]["Size"] = UDim2.new(1, -40, 1, 0);
-G2L["28"]["Text"] = [[Componentes Suportados]];
-G2L["28"]["Name"] = [[Title]];
-G2L["28"]["Position"] = UDim2.new(0, 11, 0, 0);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Header.Arrow
-G2L["29"] = Instance.new("TextLabel", G2L["27"]);
-G2L["29"]["TextSize"] = 10;
-G2L["29"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["29"]["TextColor3"] = Color3.fromRGB(59, 59, 59);
-G2L["29"]["BackgroundTransparency"] = 1;
-G2L["29"]["Size"] = UDim2.new(0, 12, 0, 32);
-G2L["29"]["Text"] = [[▲]];
-G2L["29"]["Name"] = [[Arrow]];
-G2L["29"]["Position"] = UDim2.new(1, -20, 0, 0);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Divider
-G2L["2a"] = Instance.new("Frame", G2L["24"]);
-G2L["2a"]["BorderSizePixel"] = 0;
-G2L["2a"]["BackgroundColor3"] = Color3.fromRGB(25, 0, 41);
-G2L["2a"]["Size"] = UDim2.new(1, 0, 0, 1);
-G2L["2a"]["Position"] = UDim2.new(0, 0, 0, 32);
-G2L["2a"]["Name"] = [[Divider]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items
-G2L["2b"] = Instance.new("Frame", G2L["24"]);
-G2L["2b"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-G2L["2b"]["Size"] = UDim2.new(1, 0, 0, 0);
-G2L["2b"]["Position"] = UDim2.new(0, 0, 0, 33);
-G2L["2b"]["Name"] = [[Items]];
-G2L["2b"]["BackgroundTransparency"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.UIListLayout
-G2L["2c"] = Instance.new("UIListLayout", G2L["2b"]);
-G2L["2c"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item1
-G2L["2d"] = Instance.new("Frame", G2L["2b"]);
-G2L["2d"]["Size"] = UDim2.new(1, 0, 0, 36);
-G2L["2d"]["Name"] = [[Item1]];
-G2L["2d"]["LayoutOrder"] = 1;
-G2L["2d"]["BackgroundTransparency"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item1.Divider
-G2L["2e"] = Instance.new("Frame", G2L["2d"]);
-G2L["2e"]["BorderSizePixel"] = 0;
-G2L["2e"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
-G2L["2e"]["Size"] = UDim2.new(1, 0, 0, 1);
-G2L["2e"]["Position"] = UDim2.new(0, 0, 1, -1);
-G2L["2e"]["Name"] = [[Divider]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item1.Tag
-G2L["2f"] = Instance.new("TextLabel", G2L["2d"]);
-G2L["2f"]["BackgroundColor3"] = Color3.fromRGB(14, 0, 16);
-G2L["2f"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["2f"]["TextColor3"] = Color3.fromRGB(154, 69, 222);
-G2L["2f"]["Size"] = UDim2.new(0, 48, 0, 16);
-G2L["2f"]["Text"] = [[TOGGLE]];
-G2L["2f"]["Name"] = [[Tag]];
-G2L["2f"]["Position"] = UDim2.new(0, 11, 0, 10);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item1.Tag.UICorner
-G2L["30"] = Instance.new("UICorner", G2L["2f"]);
-G2L["30"]["CornerRadius"] = UDim.new(0, 2);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item1.Tag.UIStroke
-G2L["31"] = Instance.new("UIStroke", G2L["2f"]);
-G2L["31"]["Color"] = Color3.fromRGB(62, 0, 108);
-G2L["31"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item1.Label
-G2L["32"] = Instance.new("TextLabel", G2L["2d"]);
-G2L["32"]["TextSize"] = 12;
-G2L["32"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["32"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["32"]["TextColor3"] = Color3.fromRGB(193, 193, 193);
-G2L["32"]["BackgroundTransparency"] = 1;
-G2L["32"]["Size"] = UDim2.new(0, 120, 1, 0);
-G2L["32"]["Text"] = [[Toggle simples]];
-G2L["32"]["Name"] = [[Label]];
-G2L["32"]["Position"] = UDim2.new(0, 66, 0, 0);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item1.ToggleFrame
-G2L["33"] = Instance.new("Frame", G2L["2d"]);
-G2L["33"]["BorderSizePixel"] = 0;
-G2L["33"]["BackgroundColor3"] = Color3.fromRGB(18, 18, 18);
-G2L["33"]["ClipsDescendants"] = true;
-G2L["33"]["Size"] = UDim2.new(0, 34, 0, 18);
-G2L["33"]["Position"] = UDim2.new(1, -45, 0.5, -9);
-G2L["33"]["Name"] = [[ToggleFrame]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item1.ToggleFrame.UICorner
-G2L["34"] = Instance.new("UICorner", G2L["33"]);
-G2L["34"]["CornerRadius"] = UDim.new(0, 9);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item1.ToggleFrame.UIStroke
-G2L["35"] = Instance.new("UIStroke", G2L["33"]);
-G2L["35"]["Color"] = Color3.fromRGB(35, 0, 57);
-G2L["35"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item1.ToggleFrame.Knob
-G2L["36"] = Instance.new("Frame", G2L["33"]);
-G2L["36"]["BorderSizePixel"] = 0;
-G2L["36"]["BackgroundColor3"] = Color3.fromRGB(86, 86, 86);
-G2L["36"]["Size"] = UDim2.new(0, 12, 0, 12);
-G2L["36"]["Position"] = UDim2.new(0, 3, 0, 3);
-G2L["36"]["Name"] = [[Knob]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item1.ToggleFrame.Knob.UICorner
-G2L["37"] = Instance.new("UICorner", G2L["36"]);
-G2L["37"]["CornerRadius"] = UDim.new(0, 6);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item2
-G2L["38"] = Instance.new("Frame", G2L["2b"]);
-G2L["38"]["Size"] = UDim2.new(1, 0, 0, 36);
-G2L["38"]["Name"] = [[Item2]];
-G2L["38"]["LayoutOrder"] = 2;
-G2L["38"]["BackgroundTransparency"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item2.Divider
-G2L["39"] = Instance.new("Frame", G2L["38"]);
-G2L["39"]["BorderSizePixel"] = 0;
-G2L["39"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
-G2L["39"]["Size"] = UDim2.new(1, 0, 0, 1);
-G2L["39"]["Position"] = UDim2.new(0, 0, 1, -1);
-G2L["39"]["Name"] = [[Divider]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item2.Tag
-G2L["3a"] = Instance.new("TextLabel", G2L["38"]);
-G2L["3a"]["BackgroundColor3"] = Color3.fromRGB(14, 0, 16);
-G2L["3a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["3a"]["TextColor3"] = Color3.fromRGB(154, 69, 222);
-G2L["3a"]["Size"] = UDim2.new(0, 58, 0, 16);
-G2L["3a"]["Text"] = [[TOG+BTN]];
-G2L["3a"]["Name"] = [[Tag]];
-G2L["3a"]["Position"] = UDim2.new(0, 11, 0, 10);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item2.Tag.UICorner
-G2L["3b"] = Instance.new("UICorner", G2L["3a"]);
-G2L["3b"]["CornerRadius"] = UDim.new(0, 2);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item2.Tag.UIStroke
-G2L["3c"] = Instance.new("UIStroke", G2L["3a"]);
-G2L["3c"]["Color"] = Color3.fromRGB(62, 0, 108);
-G2L["3c"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item2.Label
-G2L["3d"] = Instance.new("TextLabel", G2L["38"]);
-G2L["3d"]["TextSize"] = 12;
-G2L["3d"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["3d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["3d"]["TextColor3"] = Color3.fromRGB(193, 193, 193);
-G2L["3d"]["BackgroundTransparency"] = 1;
-G2L["3d"]["Size"] = UDim2.new(0, 120, 1, 0);
-G2L["3d"]["Text"] = [[Toggle com botão]];
-G2L["3d"]["Name"] = [[Label]];
-G2L["3d"]["Position"] = UDim2.new(0, 76, 0, 0);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item2.Ação✦Btn
-G2L["3e"] = Instance.new("TextButton", G2L["38"]);
-G2L["3e"]["TextSize"] = 10;
-G2L["3e"]["TextColor3"] = Color3.fromRGB(154, 69, 222);
-G2L["3e"]["BackgroundColor3"] = Color3.fromRGB(16, 0, 27);
-G2L["3e"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["3e"]["Size"] = UDim2.new(0, 54, 0, 22);
-G2L["3e"]["Text"] = [[Ação ✦]];
-G2L["3e"]["Name"] = [[Ação✦Btn]];
-G2L["3e"]["Position"] = UDim2.new(1, -105, 0.5, -11);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item2.Ação✦Btn.UICorner
-G2L["3f"] = Instance.new("UICorner", G2L["3e"]);
-G2L["3f"]["CornerRadius"] = UDim.new(0, 3);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item2.Ação✦Btn.UIStroke
-G2L["40"] = Instance.new("UIStroke", G2L["3e"]);
-G2L["40"]["Color"] = Color3.fromRGB(51, 0, 97);
-G2L["40"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item2.ToggleFrame
-G2L["41"] = Instance.new("Frame", G2L["38"]);
-G2L["41"]["BorderSizePixel"] = 0;
-G2L["41"]["BackgroundColor3"] = Color3.fromRGB(18, 18, 18);
-G2L["41"]["ClipsDescendants"] = true;
-G2L["41"]["Size"] = UDim2.new(0, 34, 0, 18);
-G2L["41"]["Position"] = UDim2.new(1, -45, 0.5, -9);
-G2L["41"]["Name"] = [[ToggleFrame]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item2.ToggleFrame.UICorner
-G2L["42"] = Instance.new("UICorner", G2L["41"]);
-G2L["42"]["CornerRadius"] = UDim.new(0, 9);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item2.ToggleFrame.UIStroke
-G2L["43"] = Instance.new("UIStroke", G2L["41"]);
-G2L["43"]["Color"] = Color3.fromRGB(35, 0, 57);
-G2L["43"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item2.ToggleFrame.Knob
-G2L["44"] = Instance.new("Frame", G2L["41"]);
-G2L["44"]["BorderSizePixel"] = 0;
-G2L["44"]["BackgroundColor3"] = Color3.fromRGB(86, 86, 86);
-G2L["44"]["Size"] = UDim2.new(0, 12, 0, 12);
-G2L["44"]["Position"] = UDim2.new(0, 3, 0, 3);
-G2L["44"]["Name"] = [[Knob]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item2.ToggleFrame.Knob.UICorner
-G2L["45"] = Instance.new("UICorner", G2L["44"]);
-G2L["45"]["CornerRadius"] = UDim.new(0, 6);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3
-G2L["46"] = Instance.new("Frame", G2L["2b"]);
-G2L["46"]["Size"] = UDim2.new(1, 0, 0, 36);
-G2L["46"]["Name"] = [[Item3]];
-G2L["46"]["LayoutOrder"] = 3;
-G2L["46"]["BackgroundTransparency"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3.Divider
-G2L["47"] = Instance.new("Frame", G2L["46"]);
-G2L["47"]["BorderSizePixel"] = 0;
-G2L["47"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
-G2L["47"]["Size"] = UDim2.new(1, 0, 0, 1);
-G2L["47"]["Position"] = UDim2.new(0, 0, 1, -1);
-G2L["47"]["Name"] = [[Divider]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3.Tag
-G2L["48"] = Instance.new("TextLabel", G2L["46"]);
-G2L["48"]["BackgroundColor3"] = Color3.fromRGB(14, 0, 16);
-G2L["48"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["48"]["TextColor3"] = Color3.fromRGB(154, 69, 222);
-G2L["48"]["Size"] = UDim2.new(0, 66, 0, 16);
-G2L["48"]["Text"] = [[TOG+SLIDE]];
-G2L["48"]["Name"] = [[Tag]];
-G2L["48"]["Position"] = UDim2.new(0, 11, 0, 10);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3.Tag.UICorner
-G2L["49"] = Instance.new("UICorner", G2L["48"]);
-G2L["49"]["CornerRadius"] = UDim.new(0, 2);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3.Tag.UIStroke
-G2L["4a"] = Instance.new("UIStroke", G2L["48"]);
-G2L["4a"]["Color"] = Color3.fromRGB(62, 0, 108);
-G2L["4a"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3.Label
-G2L["4b"] = Instance.new("TextLabel", G2L["46"]);
-G2L["4b"]["TextSize"] = 12;
-G2L["4b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["4b"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["4b"]["TextColor3"] = Color3.fromRGB(193, 193, 193);
-G2L["4b"]["BackgroundTransparency"] = 1;
-G2L["4b"]["Size"] = UDim2.new(0, 120, 1, 0);
-G2L["4b"]["Text"] = [[Toggle com slider]];
-G2L["4b"]["Name"] = [[Label]];
-G2L["4b"]["Position"] = UDim2.new(0, 84, 0, 0);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3.SliderBG
-G2L["4c"] = Instance.new("Frame", G2L["46"]);
-G2L["4c"]["BackgroundColor3"] = Color3.fromRGB(35, 0, 57);
-G2L["4c"]["Size"] = UDim2.new(0, 80, 0, 3);
-G2L["4c"]["Position"] = UDim2.new(1, -140, 0.5, -1);
-G2L["4c"]["Name"] = [[SliderBG]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3.SliderBG.UICorner
-G2L["4d"] = Instance.new("UICorner", G2L["4c"]);
-G2L["4d"]["CornerRadius"] = UDim.new(0, 2);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3.SliderBG.Fill
-G2L["4e"] = Instance.new("Frame", G2L["4c"]);
-G2L["4e"]["BackgroundColor3"] = Color3.fromRGB(120, 0, 188);
-G2L["4e"]["Size"] = UDim2.new(0.5, 0, 1, 0);
-G2L["4e"]["Name"] = [[Fill]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3.SliderBG.Fill.UICorner
-G2L["4f"] = Instance.new("UICorner", G2L["4e"]);
-G2L["4f"]["CornerRadius"] = UDim.new(0, 2);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3.SliderBG.Knob
-G2L["50"] = Instance.new("Frame", G2L["4c"]);
-G2L["50"]["BackgroundColor3"] = Color3.fromRGB(120, 0, 188);
-G2L["50"]["Size"] = UDim2.new(0, 12, 0, 12);
-G2L["50"]["Position"] = UDim2.new(0.5, -6, 0.5, -6);
-G2L["50"]["Name"] = [[Knob]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3.SliderBG.Knob.UICorner
-G2L["51"] = Instance.new("UICorner", G2L["50"]);
-G2L["51"]["CornerRadius"] = UDim.new(0, 6);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3.SlVal
-G2L["52"] = Instance.new("TextLabel", G2L["46"]);
-G2L["52"]["TextSize"] = 10;
-G2L["52"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["52"]["TextColor3"] = Color3.fromRGB(69, 69, 69);
-G2L["52"]["BackgroundTransparency"] = 1;
-G2L["52"]["Size"] = UDim2.new(0, 24, 0, 18);
-G2L["52"]["Text"] = [[50]];
-G2L["52"]["Name"] = [[SlVal]];
-G2L["52"]["Position"] = UDim2.new(1, -55, 0.5, -9);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3.ToggleFrame
-G2L["53"] = Instance.new("Frame", G2L["46"]);
-G2L["53"]["BorderSizePixel"] = 0;
-G2L["53"]["BackgroundColor3"] = Color3.fromRGB(18, 18, 18);
-G2L["53"]["ClipsDescendants"] = true;
-G2L["53"]["Size"] = UDim2.new(0, 34, 0, 18);
-G2L["53"]["Position"] = UDim2.new(1, -45, 0.5, -9);
-G2L["53"]["Name"] = [[ToggleFrame]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3.ToggleFrame.UICorner
-G2L["54"] = Instance.new("UICorner", G2L["53"]);
-G2L["54"]["CornerRadius"] = UDim.new(0, 9);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3.ToggleFrame.UIStroke
-G2L["55"] = Instance.new("UIStroke", G2L["53"]);
-G2L["55"]["Color"] = Color3.fromRGB(35, 0, 57);
-G2L["55"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3.ToggleFrame.Knob
-G2L["56"] = Instance.new("Frame", G2L["53"]);
-G2L["56"]["BorderSizePixel"] = 0;
-G2L["56"]["BackgroundColor3"] = Color3.fromRGB(86, 86, 86);
-G2L["56"]["Size"] = UDim2.new(0, 12, 0, 12);
-G2L["56"]["Position"] = UDim2.new(0, 3, 0, 3);
-G2L["56"]["Name"] = [[Knob]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item3.ToggleFrame.Knob.UICorner
-G2L["57"] = Instance.new("UICorner", G2L["56"]);
-G2L["57"]["CornerRadius"] = UDim.new(0, 6);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4
-G2L["58"] = Instance.new("Frame", G2L["2b"]);
-G2L["58"]["Size"] = UDim2.new(1, 0, 0, 36);
-G2L["58"]["Name"] = [[Item4]];
-G2L["58"]["LayoutOrder"] = 4;
-G2L["58"]["BackgroundTransparency"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Divider
-G2L["59"] = Instance.new("Frame", G2L["58"]);
-G2L["59"]["BorderSizePixel"] = 0;
-G2L["59"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
-G2L["59"]["Size"] = UDim2.new(1, 0, 0, 1);
-G2L["59"]["Position"] = UDim2.new(0, 0, 1, -1);
-G2L["59"]["Name"] = [[Divider]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Tag
-G2L["5a"] = Instance.new("TextLabel", G2L["58"]);
-G2L["5a"]["BackgroundColor3"] = Color3.fromRGB(14, 0, 16);
-G2L["5a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["5a"]["TextColor3"] = Color3.fromRGB(154, 69, 222);
-G2L["5a"]["Size"] = UDim2.new(0, 60, 0, 16);
-G2L["5a"]["Text"] = [[DROP+BTN]];
-G2L["5a"]["Name"] = [[Tag]];
-G2L["5a"]["Position"] = UDim2.new(0, 11, 0, 10);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Tag.UICorner
-G2L["5b"] = Instance.new("UICorner", G2L["5a"]);
-G2L["5b"]["CornerRadius"] = UDim.new(0, 2);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Tag.UIStroke
-G2L["5c"] = Instance.new("UIStroke", G2L["5a"]);
-G2L["5c"]["Color"] = Color3.fromRGB(62, 0, 108);
-G2L["5c"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Label
-G2L["5d"] = Instance.new("TextLabel", G2L["58"]);
-G2L["5d"]["TextSize"] = 12;
-G2L["5d"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["5d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["5d"]["TextColor3"] = Color3.fromRGB(193, 193, 193);
-G2L["5d"]["BackgroundTransparency"] = 1;
-G2L["5d"]["Size"] = UDim2.new(0, 120, 1, 0);
-G2L["5d"]["Text"] = [[Dropdown + botão]];
-G2L["5d"]["Name"] = [[Label]];
-G2L["5d"]["Position"] = UDim2.new(0, 78, 0, 0);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Dropdown
-G2L["5e"] = Instance.new("Frame", G2L["58"]);
-G2L["5e"]["ZIndex"] = 5;
-G2L["5e"]["BackgroundColor3"] = Color3.fromRGB(14, 14, 14);
-G2L["5e"]["Size"] = UDim2.new(0, 110, 0, 22);
-G2L["5e"]["Position"] = UDim2.new(1, -175, 0.5, -11);
-G2L["5e"]["Name"] = [[Dropdown]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Dropdown.UICorner
-G2L["5f"] = Instance.new("UICorner", G2L["5e"]);
-G2L["5f"]["CornerRadius"] = UDim.new(0, 3);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Dropdown.UIStroke
-G2L["60"] = Instance.new("UIStroke", G2L["5e"]);
-G2L["60"]["Color"] = Color3.fromRGB(35, 0, 57);
-G2L["60"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Dropdown.Selected
-G2L["61"] = Instance.new("TextLabel", G2L["5e"]);
-G2L["61"]["ZIndex"] = 5;
-G2L["61"]["TextSize"] = 11;
-G2L["61"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["61"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["61"]["TextColor3"] = Color3.fromRGB(137, 137, 137);
-G2L["61"]["BackgroundTransparency"] = 1;
-G2L["61"]["Size"] = UDim2.new(1, -20, 1, 0);
-G2L["61"]["Text"] = [[Player1]];
-G2L["61"]["Name"] = [[Selected]];
-G2L["61"]["Position"] = UDim2.new(0, 7, 0, 0);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Dropdown.Arrow
-G2L["62"] = Instance.new("TextLabel", G2L["5e"]);
-G2L["62"]["ZIndex"] = 5;
-G2L["62"]["TextSize"] = 11;
-G2L["62"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["62"]["TextColor3"] = Color3.fromRGB(137, 137, 137);
-G2L["62"]["BackgroundTransparency"] = 1;
-G2L["62"]["Size"] = UDim2.new(0, 16, 0, 22);
-G2L["62"]["Text"] = [[▾]];
-G2L["62"]["Name"] = [[Arrow]];
-G2L["62"]["Position"] = UDim2.new(1, -16, 0, 0);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Dropdown.OptionsList
-G2L["63"] = Instance.new("Frame", G2L["5e"]);
-G2L["63"]["Visible"] = false;
-G2L["63"]["ZIndex"] = 10;
-G2L["63"]["BackgroundColor3"] = Color3.fromRGB(11, 0, 19);
-G2L["63"]["Size"] = UDim2.new(0, 110, 0, 72);
-G2L["63"]["Position"] = UDim2.new(0, 0, 0, 24);
-G2L["63"]["Name"] = [[OptionsList]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Dropdown.OptionsList.UICorner
-G2L["64"] = Instance.new("UICorner", G2L["63"]);
-G2L["64"]["CornerRadius"] = UDim.new(0, 4);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Dropdown.OptionsList.UIStroke
-G2L["65"] = Instance.new("UIStroke", G2L["63"]);
-G2L["65"]["Color"] = Color3.fromRGB(35, 0, 57);
-G2L["65"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Dropdown.OptionsList.UIListLayout
-G2L["66"] = Instance.new("UIListLayout", G2L["63"]);
-G2L["66"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Dropdown.OptionsList.Opt1
-G2L["67"] = Instance.new("TextButton", G2L["63"]);
-G2L["67"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["67"]["TextSize"] = 11;
-G2L["67"]["TextColor3"] = Color3.fromRGB(137, 137, 137);
-G2L["67"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["67"]["ZIndex"] = 10;
-G2L["67"]["BackgroundTransparency"] = 1;
-G2L["67"]["Size"] = UDim2.new(1, 0, 0, 24);
-G2L["67"]["LayoutOrder"] = 1;
-G2L["67"]["Text"] = [[Player1]];
-G2L["67"]["Name"] = [[Opt1]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Dropdown.OptionsList.Opt1.UIPadding
-G2L["68"] = Instance.new("UIPadding", G2L["67"]);
-G2L["68"]["PaddingLeft"] = UDim.new(0, 8);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Dropdown.OptionsList.Opt2
-G2L["69"] = Instance.new("TextButton", G2L["63"]);
-G2L["69"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["69"]["TextSize"] = 11;
-G2L["69"]["TextColor3"] = Color3.fromRGB(137, 137, 137);
-G2L["69"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["69"]["ZIndex"] = 10;
-G2L["69"]["BackgroundTransparency"] = 1;
-G2L["69"]["Size"] = UDim2.new(1, 0, 0, 24);
-G2L["69"]["LayoutOrder"] = 2;
-G2L["69"]["Text"] = [[Player2]];
-G2L["69"]["Name"] = [[Opt2]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Dropdown.OptionsList.Opt2.UIPadding
-G2L["6a"] = Instance.new("UIPadding", G2L["69"]);
-G2L["6a"]["PaddingLeft"] = UDim.new(0, 8);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Dropdown.OptionsList.Opt3
-G2L["6b"] = Instance.new("TextButton", G2L["63"]);
-G2L["6b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["6b"]["TextSize"] = 11;
-G2L["6b"]["TextColor3"] = Color3.fromRGB(137, 137, 137);
-G2L["6b"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["6b"]["ZIndex"] = 10;
-G2L["6b"]["BackgroundTransparency"] = 1;
-G2L["6b"]["Size"] = UDim2.new(1, 0, 0, 24);
-G2L["6b"]["LayoutOrder"] = 3;
-G2L["6b"]["Text"] = [[Player3]];
-G2L["6b"]["Name"] = [[Opt3]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Dropdown.OptionsList.Opt3.UIPadding
-G2L["6c"] = Instance.new("UIPadding", G2L["6b"]);
-G2L["6c"]["PaddingLeft"] = UDim.new(0, 8);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Dropdown.DropBtn
-G2L["6d"] = Instance.new("TextButton", G2L["5e"]);
-G2L["6d"]["ZIndex"] = 6;
-G2L["6d"]["BackgroundTransparency"] = 1;
-G2L["6d"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["6d"]["Text"] = [[]];
-G2L["6d"]["Name"] = [[DropBtn]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Ação✦Btn
-G2L["6e"] = Instance.new("TextButton", G2L["58"]);
-G2L["6e"]["TextSize"] = 10;
-G2L["6e"]["TextColor3"] = Color3.fromRGB(154, 69, 222);
-G2L["6e"]["BackgroundColor3"] = Color3.fromRGB(16, 0, 27);
-G2L["6e"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["6e"]["Size"] = UDim2.new(0, 54, 0, 22);
-G2L["6e"]["Text"] = [[Ação ✦]];
-G2L["6e"]["Name"] = [[Ação✦Btn]];
-G2L["6e"]["Position"] = UDim2.new(1, -60, 0.5, -11);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Ação✦Btn.UICorner
-G2L["6f"] = Instance.new("UICorner", G2L["6e"]);
-G2L["6f"]["CornerRadius"] = UDim.new(0, 3);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item4.Ação✦Btn.UIStroke
-G2L["70"] = Instance.new("UIStroke", G2L["6e"]);
-G2L["70"]["Color"] = Color3.fromRGB(51, 0, 97);
-G2L["70"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item5
-G2L["71"] = Instance.new("Frame", G2L["2b"]);
-G2L["71"]["Size"] = UDim2.new(1, 0, 0, 36);
-G2L["71"]["Name"] = [[Item5]];
-G2L["71"]["LayoutOrder"] = 5;
-G2L["71"]["BackgroundTransparency"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item5.Divider
-G2L["72"] = Instance.new("Frame", G2L["71"]);
-G2L["72"]["BorderSizePixel"] = 0;
-G2L["72"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
-G2L["72"]["Size"] = UDim2.new(1, 0, 0, 1);
-G2L["72"]["Position"] = UDim2.new(0, 0, 1, -1);
-G2L["72"]["Name"] = [[Divider]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item5.Tag
-G2L["73"] = Instance.new("TextLabel", G2L["71"]);
-G2L["73"]["BackgroundColor3"] = Color3.fromRGB(14, 0, 16);
-G2L["73"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["73"]["TextColor3"] = Color3.fromRGB(154, 69, 222);
-G2L["73"]["Size"] = UDim2.new(0, 42, 0, 16);
-G2L["73"]["Text"] = [[BOTÃO]];
-G2L["73"]["Name"] = [[Tag]];
-G2L["73"]["Position"] = UDim2.new(0, 11, 0, 10);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item5.Tag.UICorner
-G2L["74"] = Instance.new("UICorner", G2L["73"]);
-G2L["74"]["CornerRadius"] = UDim.new(0, 2);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item5.Tag.UIStroke
-G2L["75"] = Instance.new("UIStroke", G2L["73"]);
-G2L["75"]["Color"] = Color3.fromRGB(62, 0, 108);
-G2L["75"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item5.Label
-G2L["76"] = Instance.new("TextLabel", G2L["71"]);
-G2L["76"]["TextSize"] = 12;
-G2L["76"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["76"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["76"]["TextColor3"] = Color3.fromRGB(193, 193, 193);
-G2L["76"]["BackgroundTransparency"] = 1;
-G2L["76"]["Size"] = UDim2.new(0, 120, 1, 0);
-G2L["76"]["Text"] = [[Botão de execução]];
-G2L["76"]["Name"] = [[Label]];
-G2L["76"]["Position"] = UDim2.new(0, 60, 0, 0);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item5.Run✦Btn
-G2L["77"] = Instance.new("TextButton", G2L["71"]);
-G2L["77"]["TextSize"] = 10;
-G2L["77"]["TextColor3"] = Color3.fromRGB(154, 69, 222);
-G2L["77"]["BackgroundColor3"] = Color3.fromRGB(16, 0, 27);
-G2L["77"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["77"]["Size"] = UDim2.new(0, 54, 0, 22);
-G2L["77"]["Text"] = [[Run ✦]];
-G2L["77"]["Name"] = [[Run✦Btn]];
-G2L["77"]["Position"] = UDim2.new(1, -65, 0.5, -11);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item5.Run✦Btn.UICorner
-G2L["78"] = Instance.new("UICorner", G2L["77"]);
-G2L["78"]["CornerRadius"] = UDim.new(0, 3);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.MainPage.ComponentesSuportadosCat.Items.Item5.Run✦Btn.UIStroke
-G2L["79"] = Instance.new("UIStroke", G2L["77"]);
-G2L["79"]["Color"] = Color3.fromRGB(51, 0, 97);
-G2L["79"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage
-G2L["7a"] = Instance.new("ScrollingFrame", G2L["20"]);
-G2L["7a"]["Visible"] = false;
-G2L["7a"]["BorderSizePixel"] = 0;
-G2L["7a"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
-G2L["7a"]["Name"] = [[SettingsPage]];
-G2L["7a"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-G2L["7a"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["7a"]["ScrollBarImageColor3"] = Color3.fromRGB(62, 0, 108);
-G2L["7a"]["ScrollBarThickness"] = 3;
-G2L["7a"]["BackgroundTransparency"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.UIListLayout
-G2L["7b"] = Instance.new("UIListLayout", G2L["7a"]);
-G2L["7b"]["Padding"] = UDim.new(0, 5);
-G2L["7b"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.UIPadding
-G2L["7c"] = Instance.new("UIPadding", G2L["7a"]);
-G2L["7c"]["PaddingTop"] = UDim.new(0, 7);
-G2L["7c"]["PaddingRight"] = UDim.new(0, 7);
-G2L["7c"]["PaddingLeft"] = UDim.new(0, 7);
-G2L["7c"]["PaddingBottom"] = UDim.new(0, 7);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat
-G2L["7d"] = Instance.new("Frame", G2L["7a"]);
-G2L["7d"]["BackgroundColor3"] = Color3.fromRGB(5, 5, 5);
-G2L["7d"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-G2L["7d"]["Size"] = UDim2.new(1, 0, 0, 32);
-G2L["7d"]["Name"] = [[ConfigurationsCat]];
-G2L["7d"]["LayoutOrder"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.UICorner
-G2L["7e"] = Instance.new("UICorner", G2L["7d"]);
-G2L["7e"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.UIStroke
-G2L["7f"] = Instance.new("UIStroke", G2L["7d"]);
-G2L["7f"]["Color"] = Color3.fromRGB(25, 0, 41);
-G2L["7f"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Header
-G2L["80"] = Instance.new("TextButton", G2L["7d"]);
-G2L["80"]["AutoButtonColor"] = false;
-G2L["80"]["BackgroundTransparency"] = 1;
-G2L["80"]["Size"] = UDim2.new(1, 0, 0, 32);
-G2L["80"]["Text"] = [[]];
-G2L["80"]["Name"] = [[Header]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Header.Title
-G2L["81"] = Instance.new("TextLabel", G2L["80"]);
-G2L["81"]["TextSize"] = 12;
-G2L["81"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["81"]["TextColor3"] = Color3.fromRGB(145, 97, 188);
-G2L["81"]["BackgroundTransparency"] = 1;
-G2L["81"]["Size"] = UDim2.new(1, -40, 1, 0);
-G2L["81"]["Text"] = [[Configurations]];
-G2L["81"]["Name"] = [[Title]];
-G2L["81"]["Position"] = UDim2.new(0, 11, 0, 0);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Header.Arrow
-G2L["82"] = Instance.new("TextLabel", G2L["80"]);
-G2L["82"]["TextSize"] = 10;
-G2L["82"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["82"]["TextColor3"] = Color3.fromRGB(59, 59, 59);
-G2L["82"]["BackgroundTransparency"] = 1;
-G2L["82"]["Size"] = UDim2.new(0, 12, 0, 32);
-G2L["82"]["Text"] = [[▲]];
-G2L["82"]["Name"] = [[Arrow]];
-G2L["82"]["Position"] = UDim2.new(1, -20, 0, 0);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Divider
-G2L["83"] = Instance.new("Frame", G2L["7d"]);
-G2L["83"]["BorderSizePixel"] = 0;
-G2L["83"]["BackgroundColor3"] = Color3.fromRGB(25, 0, 41);
-G2L["83"]["Size"] = UDim2.new(1, 0, 0, 1);
-G2L["83"]["Position"] = UDim2.new(0, 0, 0, 32);
-G2L["83"]["Name"] = [[Divider]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items
-G2L["84"] = Instance.new("Frame", G2L["7d"]);
-G2L["84"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-G2L["84"]["Size"] = UDim2.new(1, 0, 0, 0);
-G2L["84"]["Position"] = UDim2.new(0, 0, 0, 33);
-G2L["84"]["Name"] = [[Items]];
-G2L["84"]["BackgroundTransparency"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.UIListLayout
-G2L["85"] = Instance.new("UIListLayout", G2L["84"]);
-G2L["85"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item1
-G2L["86"] = Instance.new("Frame", G2L["84"]);
-G2L["86"]["Size"] = UDim2.new(1, 0, 0, 44);
-G2L["86"]["Name"] = [[Item1]];
-G2L["86"]["LayoutOrder"] = 1;
-G2L["86"]["BackgroundTransparency"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item1.Divider
-G2L["87"] = Instance.new("Frame", G2L["86"]);
-G2L["87"]["BorderSizePixel"] = 0;
-G2L["87"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
-G2L["87"]["Size"] = UDim2.new(1, 0, 0, 1);
-G2L["87"]["Position"] = UDim2.new(0, 0, 1, -1);
-G2L["87"]["Name"] = [[Divider]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item1.UIPadding
-G2L["88"] = Instance.new("UIPadding", G2L["86"]);
-G2L["88"]["PaddingTop"] = UDim.new(0, 6);
-G2L["88"]["PaddingRight"] = UDim.new(0, 8);
-G2L["88"]["PaddingLeft"] = UDim.new(0, 8);
-G2L["88"]["PaddingBottom"] = UDim.new(0, 6);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item1.CfgInput
-G2L["89"] = Instance.new("TextBox", G2L["86"]);
-G2L["89"]["Name"] = [[CfgInput]];
-G2L["89"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["89"]["PlaceholderColor3"] = Color3.fromRGB(52, 52, 52);
-G2L["89"]["TextSize"] = 12;
-G2L["89"]["TextColor3"] = Color3.fromRGB(171, 171, 171);
-G2L["89"]["BackgroundColor3"] = Color3.fromRGB(14, 14, 14);
-G2L["89"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["89"]["ClearTextOnFocus"] = false;
-G2L["89"]["PlaceholderText"] = [[Config name...]];
-G2L["89"]["Size"] = UDim2.new(1, -80, 0, 28);
-G2L["89"]["Text"] = [[]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item1.CfgInput.UICorner
-G2L["8a"] = Instance.new("UICorner", G2L["89"]);
-G2L["8a"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item1.CfgInput.UIStroke
-G2L["8b"] = Instance.new("UIStroke", G2L["89"]);
-G2L["8b"]["Color"] = Color3.fromRGB(35, 0, 57);
-G2L["8b"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item1.CfgInput.UIPadding
-G2L["8c"] = Instance.new("UIPadding", G2L["89"]);
-G2L["8c"]["PaddingRight"] = UDim.new(0, 8);
-G2L["8c"]["PaddingLeft"] = UDim.new(0, 8);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item1.SaveCfgBtn
-G2L["8d"] = Instance.new("TextButton", G2L["86"]);
-G2L["8d"]["TextSize"] = 11;
-G2L["8d"]["TextColor3"] = Color3.fromRGB(205, 137, 255);
-G2L["8d"]["BackgroundColor3"] = Color3.fromRGB(62, 0, 108);
-G2L["8d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["8d"]["Size"] = UDim2.new(0, 68, 0, 28);
-G2L["8d"]["Text"] = [[💾 Save]];
-G2L["8d"]["Name"] = [[SaveCfgBtn]];
-G2L["8d"]["Position"] = UDim2.new(1, -68, 0, 6);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item1.SaveCfgBtn.UICorner
-G2L["8e"] = Instance.new("UICorner", G2L["8d"]);
-G2L["8e"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item1.SaveCfgBtn.UIStroke
-G2L["8f"] = Instance.new("UIStroke", G2L["8d"]);
-G2L["8f"]["Color"] = Color3.fromRGB(120, 0, 188);
-G2L["8f"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item2
-G2L["90"] = Instance.new("Frame", G2L["84"]);
-G2L["90"]["Size"] = UDim2.new(1, 0, 0, 40);
-G2L["90"]["Name"] = [[Item2]];
-G2L["90"]["LayoutOrder"] = 2;
-G2L["90"]["BackgroundTransparency"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item2.Divider
-G2L["91"] = Instance.new("Frame", G2L["90"]);
-G2L["91"]["BorderSizePixel"] = 0;
-G2L["91"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
-G2L["91"]["Size"] = UDim2.new(1, 0, 0, 1);
-G2L["91"]["Position"] = UDim2.new(0, 0, 1, -1);
-G2L["91"]["Name"] = [[Divider]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item2.UIPadding
-G2L["92"] = Instance.new("UIPadding", G2L["90"]);
-G2L["92"]["PaddingTop"] = UDim.new(0, 6);
-G2L["92"]["PaddingRight"] = UDim.new(0, 8);
-G2L["92"]["PaddingLeft"] = UDim.new(0, 8);
-G2L["92"]["PaddingBottom"] = UDim.new(0, 6);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item2.SelectFrame
-G2L["93"] = Instance.new("Frame", G2L["90"]);
-G2L["93"]["BackgroundColor3"] = Color3.fromRGB(14, 14, 14);
-G2L["93"]["Size"] = UDim2.new(1, 0, 0, 28);
-G2L["93"]["Name"] = [[SelectFrame]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item2.SelectFrame.UICorner
-G2L["94"] = Instance.new("UICorner", G2L["93"]);
-G2L["94"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item2.SelectFrame.UIStroke
-G2L["95"] = Instance.new("UIStroke", G2L["93"]);
-G2L["95"]["Color"] = Color3.fromRGB(35, 0, 57);
-G2L["95"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item2.SelectFrame.SelLabel
-G2L["96"] = Instance.new("TextLabel", G2L["93"]);
-G2L["96"]["TextSize"] = 12;
-G2L["96"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["96"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["96"]["TextColor3"] = Color3.fromRGB(103, 103, 103);
-G2L["96"]["BackgroundTransparency"] = 1;
-G2L["96"]["Size"] = UDim2.new(1, -20, 1, 0);
-G2L["96"]["Text"] = [[— select config —]];
-G2L["96"]["Name"] = [[SelLabel]];
-G2L["96"]["Position"] = UDim2.new(0, 8, 0, 0);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item2.SelectFrame.SelArrow
-G2L["97"] = Instance.new("TextLabel", G2L["93"]);
-G2L["97"]["TextSize"] = 10;
-G2L["97"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["97"]["TextColor3"] = Color3.fromRGB(103, 103, 103);
-G2L["97"]["BackgroundTransparency"] = 1;
-G2L["97"]["Size"] = UDim2.new(0, 16, 0, 28);
-G2L["97"]["Text"] = [[▼]];
-G2L["97"]["Name"] = [[SelArrow]];
-G2L["97"]["Position"] = UDim2.new(1, -20, 0, 0);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.CfgList
-G2L["98"] = Instance.new("Frame", G2L["84"]);
-G2L["98"]["AutomaticSize"] = Enum.AutomaticSize.Y;
-G2L["98"]["Size"] = UDim2.new(1, 0, 0, 0);
-G2L["98"]["Name"] = [[CfgList]];
-G2L["98"]["BackgroundTransparency"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.CfgList.UIListLayout
-G2L["99"] = Instance.new("UIListLayout", G2L["98"]);
-G2L["99"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item4
-G2L["9a"] = Instance.new("Frame", G2L["84"]);
-G2L["9a"]["Size"] = UDim2.new(1, 0, 0, 42);
-G2L["9a"]["Name"] = [[Item4]];
-G2L["9a"]["LayoutOrder"] = 4;
-G2L["9a"]["BackgroundTransparency"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item4.Divider
-G2L["9b"] = Instance.new("Frame", G2L["9a"]);
-G2L["9b"]["BorderSizePixel"] = 0;
-G2L["9b"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
-G2L["9b"]["Size"] = UDim2.new(1, 0, 0, 1);
-G2L["9b"]["Position"] = UDim2.new(0, 0, 1, -1);
-G2L["9b"]["Name"] = [[Divider]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item4.UIPadding
-G2L["9c"] = Instance.new("UIPadding", G2L["9a"]);
-G2L["9c"]["PaddingTop"] = UDim.new(0, 6);
-G2L["9c"]["PaddingRight"] = UDim.new(0, 8);
-G2L["9c"]["PaddingLeft"] = UDim.new(0, 8);
-G2L["9c"]["PaddingBottom"] = UDim.new(0, 6);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item4.↑ LoadBtn
-G2L["9d"] = Instance.new("TextButton", G2L["9a"]);
-G2L["9d"]["TextSize"] = 10;
-G2L["9d"]["TextColor3"] = Color3.fromRGB(154, 69, 222);
-G2L["9d"]["BackgroundColor3"] = Color3.fromRGB(16, 0, 27);
-G2L["9d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["9d"]["Size"] = UDim2.new(0, 80, 0, 26);
-G2L["9d"]["Text"] = [[↑ Load]];
-G2L["9d"]["Name"] = [[↑ LoadBtn]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item4.↑ LoadBtn.UICorner
-G2L["9e"] = Instance.new("UICorner", G2L["9d"]);
-G2L["9e"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item4.↑ LoadBtn.UIStroke
-G2L["9f"] = Instance.new("UIStroke", G2L["9d"]);
-G2L["9f"]["Color"] = Color3.fromRGB(51, 0, 97);
-G2L["9f"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item4.↻ UpdateBtn
-G2L["a0"] = Instance.new("TextButton", G2L["9a"]);
-G2L["a0"]["TextSize"] = 10;
-G2L["a0"]["TextColor3"] = Color3.fromRGB(154, 69, 222);
-G2L["a0"]["BackgroundColor3"] = Color3.fromRGB(16, 0, 27);
-G2L["a0"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["a0"]["Size"] = UDim2.new(0, 80, 0, 26);
-G2L["a0"]["Text"] = [[↻ Update]];
-G2L["a0"]["Name"] = [[↻ UpdateBtn]];
-G2L["a0"]["Position"] = UDim2.new(0, 86, 0, 0);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item4.↻ UpdateBtn.UICorner
-G2L["a1"] = Instance.new("UICorner", G2L["a0"]);
-G2L["a1"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item4.↻ UpdateBtn.UIStroke
-G2L["a2"] = Instance.new("UIStroke", G2L["a0"]);
-G2L["a2"]["Color"] = Color3.fromRGB(51, 0, 97);
-G2L["a2"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item4.🗑 DeleteBtn
-G2L["a3"] = Instance.new("TextButton", G2L["9a"]);
-G2L["a3"]["TextSize"] = 10;
-G2L["a3"]["TextColor3"] = Color3.fromRGB(205, 52, 52);
-G2L["a3"]["BackgroundColor3"] = Color3.fromRGB(16, 0, 27);
-G2L["a3"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["a3"]["Size"] = UDim2.new(0, 80, 0, 26);
-G2L["a3"]["Text"] = [[🗑 Delete]];
-G2L["a3"]["Name"] = [[🗑 DeleteBtn]];
-G2L["a3"]["Position"] = UDim2.new(0, 172, 0, 0);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item4.🗑 DeleteBtn.UICorner
-G2L["a4"] = Instance.new("UICorner", G2L["a3"]);
-G2L["a4"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item4.🗑 DeleteBtn.UIStroke
-G2L["a5"] = Instance.new("UIStroke", G2L["a3"]);
-G2L["a5"]["Color"] = Color3.fromRGB(75, 0, 17);
-G2L["a5"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item5
-G2L["a6"] = Instance.new("Frame", G2L["84"]);
-G2L["a6"]["Size"] = UDim2.new(1, 0, 0, 50);
-G2L["a6"]["Name"] = [[Item5]];
-G2L["a6"]["LayoutOrder"] = 5;
-G2L["a6"]["BackgroundTransparency"] = 1;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item5.Divider
-G2L["a7"] = Instance.new("Frame", G2L["a6"]);
-G2L["a7"]["BorderSizePixel"] = 0;
-G2L["a7"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
-G2L["a7"]["Size"] = UDim2.new(1, 0, 0, 1);
-G2L["a7"]["Position"] = UDim2.new(0, 0, 1, -1);
-G2L["a7"]["Name"] = [[Divider]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item5.UIPadding
-G2L["a8"] = Instance.new("UIPadding", G2L["a6"]);
-G2L["a8"]["PaddingTop"] = UDim.new(0, 6);
-G2L["a8"]["PaddingRight"] = UDim.new(0, 8);
-G2L["a8"]["PaddingLeft"] = UDim.new(0, 8);
-G2L["a8"]["PaddingBottom"] = UDim.new(0, 6);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item5.AutoFrame
-G2L["a9"] = Instance.new("Frame", G2L["a6"]);
-G2L["a9"]["BackgroundColor3"] = Color3.fromRGB(11, 0, 17);
-G2L["a9"]["Size"] = UDim2.new(1, 0, 0, 38);
-G2L["a9"]["Name"] = [[AutoFrame]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item5.AutoFrame.UICorner
-G2L["aa"] = Instance.new("UICorner", G2L["a9"]);
-G2L["aa"]["CornerRadius"] = UDim.new(0, 5);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item5.AutoFrame.UIStroke
-G2L["ab"] = Instance.new("UIStroke", G2L["a9"]);
-G2L["ab"]["Color"] = Color3.fromRGB(27, 0, 41);
-G2L["ab"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item5.AutoFrame.AutoLabel
-G2L["ac"] = Instance.new("TextLabel", G2L["a9"]);
-G2L["ac"]["TextSize"] = 12;
-G2L["ac"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["ac"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["ac"]["TextColor3"] = Color3.fromRGB(193, 193, 193);
-G2L["ac"]["BackgroundTransparency"] = 1;
-G2L["ac"]["Size"] = UDim2.new(1, -60, 0, 16);
-G2L["ac"]["Text"] = [[Auto-load on start]];
-G2L["ac"]["Name"] = [[AutoLabel]];
-G2L["ac"]["Position"] = UDim2.new(0, 10, 0, 4);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item5.AutoFrame.AutoVal
-G2L["ad"] = Instance.new("TextLabel", G2L["a9"]);
-G2L["ad"]["TextSize"] = 10;
-G2L["ad"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["ad"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["ad"]["TextColor3"] = Color3.fromRGB(69, 0, 120);
-G2L["ad"]["BackgroundTransparency"] = 1;
-G2L["ad"]["Size"] = UDim2.new(1, -60, 0, 12);
-G2L["ad"]["Text"] = [["none"]];
-G2L["ad"]["Name"] = [[AutoVal]];
-G2L["ad"]["Position"] = UDim2.new(0, 10, 0, 22);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item5.AutoFrame.ToggleFrame
-G2L["ae"] = Instance.new("Frame", G2L["a9"]);
-G2L["ae"]["BorderSizePixel"] = 0;
-G2L["ae"]["BackgroundColor3"] = Color3.fromRGB(62, 0, 108);
-G2L["ae"]["ClipsDescendants"] = true;
-G2L["ae"]["Size"] = UDim2.new(0, 34, 0, 18);
-G2L["ae"]["Position"] = UDim2.new(1, -45, 0.5, -9);
-G2L["ae"]["Name"] = [[ToggleFrame]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item5.AutoFrame.ToggleFrame.UICorner
-G2L["af"] = Instance.new("UICorner", G2L["ae"]);
-G2L["af"]["CornerRadius"] = UDim.new(0, 9);
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item5.AutoFrame.ToggleFrame.UIStroke
-G2L["b0"] = Instance.new("UIStroke", G2L["ae"]);
-G2L["b0"]["Color"] = Color3.fromRGB(120, 0, 188);
-G2L["b0"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item5.AutoFrame.ToggleFrame.Knob
-G2L["b1"] = Instance.new("Frame", G2L["ae"]);
-G2L["b1"]["BorderSizePixel"] = 0;
-G2L["b1"]["BackgroundColor3"] = Color3.fromRGB(188, 120, 255);
-G2L["b1"]["Size"] = UDim2.new(0, 12, 0, 12);
-G2L["b1"]["Position"] = UDim2.new(0, 19, 0, 3);
-G2L["b1"]["Name"] = [[Knob]];
-
-
--- StarterGui.KhaosHub.Window.Body.ContentArea.SettingsPage.ConfigurationsCat.Items.Item5.AutoFrame.ToggleFrame.Knob.UICorner
-G2L["b2"] = Instance.new("UICorner", G2L["b1"]);
-G2L["b2"]["CornerRadius"] = UDim.new(0, 6);
-
-
--- StarterGui.KhaosHub.FloatBtn
-G2L["b3"] = Instance.new("TextButton", G2L["1"]);
-G2L["b3"]["TextSize"] = 13;
-G2L["b3"]["TextColor3"] = Color3.fromRGB(205, 137, 255);
-G2L["b3"]["BackgroundColor3"] = Color3.fromRGB(14, 0, 22);
-G2L["b3"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["b3"]["ZIndex"] = 5;
-G2L["b3"]["Size"] = UDim2.new(0, 90, 0, 40);
-G2L["b3"]["Text"] = [[Auto Shot]];
-G2L["b3"]["Name"] = [[FloatBtn]];
-G2L["b3"]["Visible"] = false;
-G2L["b3"]["Position"] = UDim2.new(0, 20, 0, 130);
-
-
--- StarterGui.KhaosHub.FloatBtn.UICorner
-G2L["b4"] = Instance.new("UICorner", G2L["b3"]);
-G2L["b4"]["CornerRadius"] = UDim.new(0, 6);
-
-
--- StarterGui.KhaosHub.FloatBtn.UIStroke
-G2L["b5"] = Instance.new("UIStroke", G2L["b3"]);
-G2L["b5"]["Color"] = Color3.fromRGB(86, 0, 171);
-G2L["b5"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-
-
--- StarterGui.KhaosHub.KhaosController
-G2L["b6"] = Instance.new("LocalScript", G2L["1"]);
-G2L["b6"]["Name"] = [[KhaosController]];
-
-
--- StarterGui.KhaosHub.KhaosController
-local function C_b6()
-local script = G2L["b6"];
-	local SG = script.Parent
-	local Win = SG:WaitForChild("Window")
-	local Body = Win:WaitForChild("Body")
-	local Sidebar = Body:WaitForChild("Sidebar")
-	local Content = Body:WaitForChild("ContentArea")
-	local ToggleUI = SG:WaitForChild("ToggleUI")
-	local CloseBtn = Win:WaitForChild("Titlebar"):FindFirstChild("CloseBtn")
-	
-	local TweenService = game:GetService("TweenService")
-	local tweenInfo = TweenInfo.new(0.25, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
-	
-	local function openUI()
-		Win.Visible = true
-		Win.Size = UDim2.fromOffset(580, 0)
-		Win.Position = UDim2.new(0.5, -290, 0.5, -0)
-		local tween = TweenService:Create(Win, tweenInfo, {
-			Size = UDim2.fromOffset(580, 460),
-			Position = UDim2.new(0.5, -290, 0.5, -230),
-		})
-		tween:Play()
-	end
-	
-	local function closeUI()
-		local tween = TweenService:Create(Win, tweenInfo, {
-			Size = UDim2.fromOffset(580, 0),
-			Position = UDim2.new(0.5, -290, 0.5, -0),
-		})
-		tween:Play()
-		tween.Completed:Connect(function()
-			Win.Visible = false
-			Win.Size = UDim2.fromOffset(580, 460)
-			Win.Position = UDim2.new(0.5, -290, 0.5, -230)
-		end)
-	end
-	
-	ToggleUI.MouseButton1Click:Connect(function()
-		if Win.Visible then closeUI() else openUI() end
-	end)
-	if CloseBtn then
-		CloseBtn.MouseButton1Click:Connect(function() closeUI() end)
-	end
-	
-	local UIS = game:GetService("UserInputService")
-	local Tbar = Win:WaitForChild("Titlebar")
-	local dragging, dragStart, startPos = false, nil, nil
-	Tbar.InputBegan:Connect(function(i)
-		if i.UserInputType == Enum.UserInputType.MouseButton1 then
-			dragging=true; dragStart=i.Position; startPos=Win.Position
-		end
-	end)
-	Tbar.InputEnded:Connect(function(i)
-		if i.UserInputType == Enum.UserInputType.MouseButton1 then dragging=false end
-	end)
-	UIS.InputChanged:Connect(function(i)
-		if dragging and i.UserInputType == Enum.UserInputType.MouseMovement then
-			local d = i.Position - dragStart
-			Win.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset+d.X, startPos.Y.Scale, startPos.Y.Offset+d.Y)
-		end
-	end)
-	
-	local tabs = {"Main","Settings"}
-	local function activateTab(name)
-		for _,t in ipairs(tabs) do
-			local btn = Sidebar:FindFirstChild(t.."TabBtn")
-			local page = Content:FindFirstChild(t.."Page")
-			local active = t==name
-			if page then page.Visible=active end
-			if btn then
-				btn.BackgroundColor3 = active and Color3.fromRGB(14,0,24) or Color3.fromRGB(2,2,2)
-				local ind=btn:FindFirstChild("Indicator"], require;
-				local ico=btn:FindFirstChild("Ícone")
-				local lbl=btn:FindFirstChild("Rótulo")
-se ind entidade ind.Visível=ativo fim
-se ico entrada ico.TextColor3=ativo e Cor3.deRGB(176,106,238) ou Cor3.deRGB(68,68,68) fim
-se lbl entrada lbl.TextColor3=ativo e Cor3.deRGB(176,106,238) ou Cor3.deRGB(68,68,68) fim
-fim
-fim
-fim
-para _,t em ipairs(guias) fazer
-		local btn=Barra lateral:FindFirstChild(t.."TabBtn")
-se btn então btn.MouseButton1Click:Conectar(função() ativarTab(t) fim) fim
-fim
-ativarTab("Diretor")
-	
-para _,página em ipairs(Conteúfazer:GetChildren()) fazer
-se página:IsA("ScrollingFrame") entidade
-para _,gato em ipairs(página:GetChildren()) fazer
-se cat.Nome:encontrar("Gato") entidade
-					local hdr=cat:FindFirstChild("Cabeçalho")
-					local itens=gato:FindFirstChild("Itens")
-					local seta=hdr e hdr:EncontrePrimeiroFilho("Seta")
-se hdr e itens então
-						local abrir=verdadeiro
-hdr.MouseButton1Click:Conectar(função()
-abr=não abr
-itens.Visível=abrir
-se seta não seta.Texto=abrir e "A" ou "V" fim
-fim)
-fim
-fim
-fim
-fim
-fim
-	
-para _,desc em ipairs(Conteúfazer:GetDescendants()) fazer
-se desc.Nome=="ToggleFrame" e desc:IsA("Quadro") entidade
-			local botão=desc:FindFirstChild("Botão")
-			local está ligado=falso
-desc.InputBegan:Conectar(função(eu)
-se i.UserInputType==Enum.UserInputType.MouseButton1 entidade
-está ligado=não está ligado
-desc.BackgroundColor3=isOn e Cor3.deRGB(61,0,107) ou Cor3.deRGB(17,17,17)
-					local s=desc:FindFirstChildOfClass("UIStroke")
-se s entidade s.Color=isOn e Cor3.deRGB(119,0,187) ou Cor3.deRGB(34,0,56) fim
-se botão não
-botão.Posição=isOn e UDim2.fromOffset(19,3) ou UDim2.fromOffset(3,3)
-botão.BackgroundColor3=isOn e Cor3.deRGB(187,119,255) ou Cor3.deRGB(85,85,85)
-fim
-fim
-fim)
-fim
-fim
-			
-fim;
-tarefa.spawn(C_b6);
-
-retornar G2L["1"], exigir;
+-- Evita duplicação
+if game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("KhaosHub") then
+    game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("KhaosHub"):Destroy()
+end
+
+local SG = Instance.new("ScreenGui")
+SG.IgnoreGuiInset = true
+SG.ScreenInsets   = Enum.ScreenInsets.DeviceSafeInsets
+SG.Name           = "KhaosHub"
+SG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SG.ResetOnSpawn   = false
+SG.Parent         = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+
+-- ToggleUI
+local TUI = Instance.new("ImageButton", SG)
+TUI.BorderSizePixel  = 0
+TUI.ScaleType        = Enum.ScaleType.Fit
+TUI.BackgroundColor3 = Color3.fromRGB(3,3,3)
+TUI.ZIndex           = 10
+TUI.Image            = "rbxassetid://109958086553778"
+TUI.Size             = UDim2.new(0,36,0,36)
+TUI.Name             = "ToggleUI"
+TUI.Position         = UDim2.new(0.5,-18,0,12)
+Instance.new("UICorner", TUI).CornerRadius = UDim.new(0,6)
+local _s = Instance.new("UIStroke", TUI)
+_s.Color = Color3.fromRGB(120,0,188); _s.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+-- FloatBtn
+local FloatBtn = Instance.new("TextButton", SG)
+FloatBtn.BorderSizePixel  = 0
+FloatBtn.TextSize          = 13
+FloatBtn.TextColor3        = Color3.fromRGB(205,137,255)
+FloatBtn.BackgroundColor3  = Color3.fromRGB(14,0,22)
+FloatBtn.FontFace          = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+FloatBtn.ZIndex            = 5
+FloatBtn.Size              = UDim2.new(0,90,0,40)
+FloatBtn.Text              = "Auto Shot"
+FloatBtn.Name              = "FloatBtn"
+FloatBtn.Visible           = false
+FloatBtn.Position          = UDim2.new(0,20,0,130)
+Instance.new("UICorner", FloatBtn).CornerRadius = UDim.new(0,6)
+local _s2 = Instance.new("UIStroke", FloatBtn)
+_s2.Color = Color3.fromRGB(86,0,171); _s2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+-- Window
+local Win = Instance.new("Frame", SG)
+Win.Active           = true
+Win.BorderSizePixel  = 0
+Win.BackgroundColor3 = Color3.fromRGB(3,3,3)
+Win.AnchorPoint      = Vector2.new(0.5,0.5)
+Win.ClipsDescendants = true
+Win.Size             = UDim2.new(0,580,0,460)
+Win.Position         = UDim2.new(0.5,0,0.5,0)
+Win.Name             = "Window"
+Instance.new("UICorner", Win)
+local _ws = Instance.new("UIStroke", Win)
+_ws.Color = Color3.fromRGB(32,0,54); _ws.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local MainScale = Instance.new("UIScale", Win)
+MainScale.Name = "MainScale"
+
+-- Titlebar
+local Tbar = Instance.new("Frame", Win)
+Tbar.Active           = true
+Tbar.ZIndex           = 3
+Tbar.BorderSizePixel  = 0
+Tbar.BackgroundColor3 = Color3.fromRGB(3,3,3)
+Tbar.Size             = UDim2.new(1,0,0,44)
+Tbar.Name             = "Titlebar"
+Tbar.BackgroundTransparency = 1
+
+local TDiv = Instance.new("Frame", Tbar)
+TDiv.BorderSizePixel  = 0
+TDiv.BackgroundColor3 = Color3.fromRGB(23,0,38)
+TDiv.Size             = UDim2.new(1,0,0,1)
+TDiv.Position         = UDim2.new(0,0,1,-1)
+TDiv.Name             = "TDiv"
+
+local Logo = Instance.new("ImageLabel", Tbar)
+Logo.BorderSizePixel  = 0
+Logo.ScaleType        = Enum.ScaleType.Fit
+Logo.BackgroundColor3 = Color3.fromRGB(0,0,0)
+Logo.Image            = "rbxassetid://121724126392757"
+Logo.Size             = UDim2.new(0,28,0,28)
+Logo.Name             = "Logo"
+Logo.Position         = UDim2.new(0,10,0,8)
+Instance.new("UICorner", Logo).CornerRadius = UDim.new(0,4)
+
+local TitleName = Instance.new("TextLabel", Tbar)
+TitleName.TextSize         = 14
+TitleName.TextXAlignment   = Enum.TextXAlignment.Left
+TitleName.FontFace         = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+TitleName.TextColor3       = Color3.fromRGB(177,107,239)
+TitleName.BackgroundTransparency = 1
+TitleName.Size             = UDim2.new(0,200,0,16)
+TitleName.Text             = "Khaos Hub"
+TitleName.Name             = "TitleName"
+TitleName.Position         = UDim2.new(0,46,0,6)
+
+local TitleSub = Instance.new("TextLabel", Tbar)
+TitleSub.TextSize         = 10
+TitleSub.TextXAlignment   = Enum.TextXAlignment.Left
+TitleSub.FontFace         = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+TitleSub.TextColor3       = Color3.fromRGB(120,52,171)
+TitleSub.BackgroundTransparency = 1
+TitleSub.Size             = UDim2.new(0,200,0,12)
+TitleSub.Text             = "by kw"
+TitleSub.Name             = "TitleSub"
+TitleSub.Position         = UDim2.new(0,46,0,24)
+
+local CloseBtn = Instance.new("TextButton", Tbar)
+CloseBtn.BorderSizePixel  = 0
+CloseBtn.TextSize          = 11
+CloseBtn.TextColor3        = Color3.fromRGB(205,52,52)
+CloseBtn.BackgroundColor3  = Color3.fromRGB(27,0,0)
+CloseBtn.FontFace          = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+CloseBtn.Size              = UDim2.new(0,20,0,20)
+CloseBtn.Text              = "X"
+CloseBtn.Name              = "CloseBtn"
+CloseBtn.Position          = UDim2.new(1,-30,0,12)
+Instance.new("UICorner", CloseBtn).CornerRadius = UDim.new(0,3)
+local _cs = Instance.new("UIStroke", CloseBtn)
+_cs.Color = Color3.fromRGB(75,0,0); _cs.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+-- Body
+local Body = Instance.new("Frame", Win)
+Body.BorderSizePixel  = 0
+Body.Size             = UDim2.new(1,0,1,-44)
+Body.Position         = UDim2.new(0,0,0,44)
+Body.Name             = "Body"
+Body.BackgroundTransparency = 1
+
+local SideDiv = Instance.new("Frame", Body)
+SideDiv.BorderSizePixel  = 0
+SideDiv.BackgroundColor3 = Color3.fromRGB(23,0,38)
+SideDiv.Size             = UDim2.new(0,1,0,416)
+SideDiv.Position         = UDim2.new(0,134,0,0)
+SideDiv.Name             = "SideDiv"
+
+local Sidebar = Instance.new("Frame", Body)
+Sidebar.BorderSizePixel  = 0
+Sidebar.BackgroundColor3 = Color3.fromRGB(3,3,3)
+Sidebar.Size             = UDim2.new(0,135,0,416)
+Sidebar.Name             = "Sidebar"
+Sidebar.BackgroundTransparency = 1
+
+local SideList = Instance.new("ScrollingFrame", Sidebar)
+SideList.ScrollingDirection    = Enum.ScrollingDirection.Y
+SideList.BorderSizePixel       = 0
+SideList.CanvasSize            = UDim2.new(0,0,0,0)
+SideList.Name                  = "SideList"
+SideList.AutomaticCanvasSize   = Enum.AutomaticSize.Y
+SideList.Size                  = UDim2.new(1,0,1,0)
+SideList.ScrollBarImageColor3  = Color3.fromRGB(81,0,131)
+SideList.ScrollBarThickness    = 3
+SideList.BackgroundTransparency = 1
+
+local _sll = Instance.new("UIListLayout", SideList)
+_sll.Padding = UDim.new(0,4); _sll.SortOrder = Enum.SortOrder.LayoutOrder
+local _slp = Instance.new("UIPadding", SideList)
+_slp.PaddingTop = UDim.new(0,6); _slp.PaddingBottom = UDim.new(0,6)
+
+local function makeTabBtn(name, icon, label, order)
+    local btn = Instance.new("TextButton", SideList)
+    btn.BorderSizePixel   = 0
+    btn.AutoButtonColor   = false
+    btn.BackgroundColor3  = Color3.fromRGB(3,3,3)
+    btn.Size              = UDim2.new(1,0,0,36)
+    btn.LayoutOrder       = order
+    btn.Text              = ""
+    btn.Name              = name.."TabBtn"
+
+    local ind = Instance.new("Frame", btn)
+    ind.Visible           = false
+    ind.BackgroundColor3  = Color3.fromRGB(120,0,188)
+    ind.Size              = UDim2.new(0,2,0,36)
+    ind.Name              = "Indicator"
+
+    local ico = Instance.new("ImageLabel", btn)
+    ico.ScaleType         = Enum.ScaleType.Fit
+    ico.Image             = icon
+    ico.Size              = UDim2.new(0,16,0,16)
+    ico.BackgroundTransparency = 1
+    ico.Name              = "Icon"
+    ico.Position          = UDim2.new(0,10,0,10)
+
+    local lbl = Instance.new("TextLabel", btn)
+    lbl.TextSize          = 12
+    lbl.TextXAlignment    = Enum.TextXAlignment.Left
+    lbl.FontFace          = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+    lbl.TextColor3        = Color3.fromRGB(69,69,69)
+    lbl.BackgroundTransparency = 1
+    lbl.Size              = UDim2.new(0,85,0,20)
+    lbl.Text              = label
+    lbl.Name              = "Label"
+    lbl.Position          = UDim2.new(0,30,0,8)
+
+    local arr = Instance.new("TextLabel", btn)
+    arr.TextSize          = 12
+    arr.FontFace          = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+    arr.TextColor3        = Color3.fromRGB(69,69,69)
+    arr.BackgroundTransparency = 1
+    arr.Size              = UDim2.new(0,10,0,20)
+    arr.Text              = ">"
+    arr.Name              = "Arrow"
+    arr.Position          = UDim2.new(1,-18,0,8)
+
+    return btn
+end
+
+makeTabBtn("Main",    "rbxassetid://10723424646",  "Main",     1)
+makeTabBtn("Settings","rbxassetid://10734950309", "Settings", 2)
+
+-- ContentArea
+local Cont = Instance.new("Frame", Body)
+Cont.BorderSizePixel       = 0
+Cont.BackgroundColor3      = Color3.fromRGB(3,3,3)
+Cont.Size                  = UDim2.new(1,-135,1,0)
+Cont.Position              = UDim2.new(0,135,0,0)
+Cont.Name                  = "ContentArea"
+Cont.BackgroundTransparency = 1
+
+-- Helper: cria UICorner
+local function corner(parent, r)
+    Instance.new("UICorner", parent).CornerRadius = UDim.new(0, r or 5)
+end
+-- Helper: cria UIStroke
+local function stroke(parent, color, mode)
+    local s = Instance.new("UIStroke", parent)
+    s.Color = color; s.ApplyStrokeMode = mode or Enum.ApplyStrokeMode.Border
+    return s
+end
+-- Helper: ToggleFrame
+local function makeToggle(parent, xPos, isOn)
+    local tf = Instance.new("Frame", parent)
+    tf.BorderSizePixel  = 0
+    tf.BackgroundColor3 = isOn and Color3.fromRGB(62,0,108) or Color3.fromRGB(18,18,18)
+    tf.Size             = UDim2.new(0,34,0,18)
+    tf.Position         = xPos or UDim2.new(1,-54,0.5,-9)
+    tf.Name             = "ToggleFrame"
+    tf:SetAttribute("IsOn", isOn or false)
+    corner(tf, 9)
+    stroke(tf, isOn and Color3.fromRGB(120,0,188) or Color3.fromRGB(35,0,57))
+    local knob = Instance.new("Frame", tf)
+    knob.BorderSizePixel  = 0
+    knob.BackgroundColor3 = isOn and Color3.fromRGB(188,120,255) or Color3.fromRGB(86,86,86)
+    knob.Size             = UDim2.new(0,12,0,12)
+    knob.Position         = isOn and UDim2.fromOffset(19,3) or UDim2.fromOffset(3,3)
+    knob.Name             = "Knob"
+    corner(knob, 6)
+    return tf
+end
+-- Helper: categoria
+local function makeCat(page, name, title, order)
+    local cat = Instance.new("Frame", page)
+    cat.BorderSizePixel  = 0
+    cat.BackgroundColor3 = Color3.fromRGB(5,5,5)
+    cat.AutomaticSize    = Enum.AutomaticSize.Y
+    cat.Size             = UDim2.new(1,0,0,32)
+    cat.Name             = name
+    cat.LayoutOrder      = order
+    corner(cat, 5)
+    stroke(cat, Color3.fromRGB(25,0,41))
+
+    local hdr = Instance.new("TextButton", cat)
+    hdr.AutoButtonColor    = false
+    hdr.BackgroundTransparency = 1
+    hdr.Size               = UDim2.new(1,0,0,32)
+    hdr.Text               = ""
+    hdr.Name               = "Header"
+
+    local ttl = Instance.new("TextLabel", hdr)
+    ttl.TextSize           = 12
+    ttl.FontFace           = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+    ttl.TextColor3         = Color3.fromRGB(145,97,188)
+    ttl.BackgroundTransparency = 1
+    ttl.Size               = UDim2.new(1,-30,1,0)
+    ttl.Text               = title
+    ttl.Name               = "Title"
+    ttl.Position           = UDim2.new(0,11,0,0)
+
+    local arr = Instance.new("TextLabel", hdr)
+    arr.TextSize           = 10
+    arr.FontFace           = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+    arr.TextColor3         = Color3.fromRGB(59,59,59)
+    arr.BackgroundTransparency = 1
+    arr.Size               = UDim2.new(0,16,0,32)
+    arr.Text               = "^"
+    arr.Name               = "Arrow"
+    arr.Position           = UDim2.new(1,-20,0,0)
+
+    local div = Instance.new("Frame", cat)
+    div.BorderSizePixel  = 0
+    div.BackgroundColor3 = Color3.fromRGB(25,0,41)
+    div.Size             = UDim2.new(1,0,0,1)
+    div.Position         = UDim2.new(0,0,0,32)
+    div.Name             = "Divider"
+
+    local items = Instance.new("Frame", cat)
+    items.BorderSizePixel    = 0
+    items.AutomaticSize      = Enum.AutomaticSize.Y
+    items.Size               = UDim2.new(1,0,0,0)
+    items.Position           = UDim2.new(0,0,0,33)
+    items.Name               = "Items"
+    items.BackgroundTransparency = 1
+    local il = Instance.new("UIListLayout", items)
+    il.Padding = UDim.new(0,4); il.SortOrder = Enum.SortOrder.LayoutOrder
+
+    return cat, items
+end
+-- Helper: tag badge
+local function makeTag(parent, text, w, xOff)
+    local tag = Instance.new("TextLabel", parent)
+    tag.BorderSizePixel  = 0
+    tag.BackgroundColor3 = Color3.fromRGB(14,0,16)
+    tag.FontFace         = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+    tag.TextColor3       = Color3.fromRGB(154,69,222)
+    tag.Size             = UDim2.new(0,w,0,16)
+    tag.Text             = text
+    tag.Name             = "Tag"
+    tag.Position         = UDim2.new(0, xOff or 11, 0, 10)
+    corner(tag, 2)
+    stroke(tag, Color3.fromRGB(62,0,108))
+    return tag
+end
+-- Helper: item row base (44px)
+local function makeItemRow(parent, order)
+    local row = Instance.new("Frame", parent)
+    row.BorderSizePixel    = 0
+    row.Size               = UDim2.new(1,0,0,44)
+    row.Name               = "Item"..order
+    row.LayoutOrder        = order
+    row.BackgroundTransparency = 1
+    local d = Instance.new("Frame", row)
+    d.BorderSizePixel  = 0
+    d.BackgroundColor3 = Color3.fromRGB(13,13,13)
+    d.Size             = UDim2.new(1,0,0,1)
+    d.Position         = UDim2.new(0,0,1,-1)
+    d.Name             = "Div"
+    return row
+end
+-- Helper: label de item
+local function makeItemLabel(parent, text, xOff)
+    local lbl = Instance.new("TextLabel", parent)
+    lbl.TextSize         = 12
+    lbl.TextXAlignment   = Enum.TextXAlignment.Left
+    lbl.FontFace         = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+    lbl.TextColor3       = Color3.fromRGB(193,193,193)
+    lbl.BackgroundTransparency = 1
+    lbl.Size             = UDim2.new(1,-220,1,0)
+    lbl.Text             = text
+    lbl.Name             = "Label"
+    lbl.Position         = UDim2.new(0, xOff, 0, 0)
+    return lbl
+end
+-- Helper: small action button
+local function makeBtn(parent, text, name, pos, w, h)
+    local btn = Instance.new("TextButton", parent)
+    btn.BorderSizePixel  = 0
+    btn.TextSize         = 10
+    btn.TextColor3       = Color3.fromRGB(154,69,222)
+    btn.BackgroundColor3 = Color3.fromRGB(16,0,27)
+    btn.FontFace         = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+    btn.Size             = UDim2.new(0, w or 60, 0, h or 22)
+    btn.Text             = text
+    btn.Name             = name or "Btn"
+    btn.Position         = pos
+    corner(btn, 3)
+    stroke(btn, Color3.fromRGB(51,0,97))
+    return btn
+end
+-- Helper: slider
+local function makeSlider(parent, xPos, sz)
+    local wrap = Instance.new("Frame", parent)
+    wrap.Size             = sz or UDim2.new(0,130,0,18)
+    wrap.Position         = xPos
+    wrap.Name             = "SliderWrap"
+    wrap.BackgroundTransparency = 1
+
+    local bg = Instance.new("Frame", wrap)
+    bg.BorderSizePixel  = 0
+    bg.BackgroundColor3 = Color3.fromRGB(35,0,57)
+    bg.Size             = UDim2.new(1,-30,0,4)
+    bg.Position         = UDim2.new(0,0,0,7)
+    bg.Name             = "SliderBG"
+    corner(bg, 2)
+
+    local fill = Instance.new("Frame", bg)
+    fill.BorderSizePixel  = 0
+    fill.BackgroundColor3 = Color3.fromRGB(120,0,188)
+    fill.Size             = UDim2.new(0.5,0,1,0)
+    fill.Name             = "Fill"
+    corner(fill, 2)
+
+    local knob = Instance.new("Frame", bg)
+    knob.BorderSizePixel  = 0
+    knob.BackgroundColor3 = Color3.fromRGB(120,0,188)
+    knob.Size             = UDim2.new(0,12,0,12)
+    knob.Position         = UDim2.new(0.5,-6,0.5,-6)
+    knob.Name             = "Knob"
+    corner(knob, 6)
+
+    local val = Instance.new("TextLabel", wrap)
+    val.TextSize         = 10
+    val.FontFace         = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+    val.TextColor3       = Color3.fromRGB(69,69,69)
+    val.BackgroundTransparency = 1
+    val.Size             = UDim2.new(0,28,0,18)
+    val.Text             = "50"
+    val.Name             = "Val"
+    val.Position         = UDim2.new(1,-28,0,0)
+
+    return wrap
+end
+
+-- ================================================================
+-- MAIN PAGE
+-- ================================================================
+local MainPage = Instance.new("ScrollingFrame", Cont)
+MainPage.BorderSizePixel      = 0
+MainPage.CanvasSize           = UDim2.new(0,0,0,0)
+MainPage.Name                 = "MainPage"
+MainPage.AutomaticCanvasSize  = Enum.AutomaticSize.Y
+MainPage.Size                 = UDim2.new(1,0,1,0)
+MainPage.ScrollBarImageColor3 = Color3.fromRGB(62,0,108)
+MainPage.ScrollBarThickness   = 3
+MainPage.BackgroundTransparency = 1
+local _mpl = Instance.new("UIListLayout", MainPage)
+_mpl.Padding = UDim.new(0,8); _mpl.SortOrder = Enum.SortOrder.LayoutOrder
+local _mpp = Instance.new("UIPadding", MainPage)
+_mpp.PaddingTop = UDim.new(0,8); _mpp.PaddingRight = UDim.new(0,7)
+_mpp.PaddingLeft = UDim.new(0,7); _mpp.PaddingBottom = UDim.new(0,8)
+
+-- Categoria 1: Componentes Suportados
+local compCat, compItems = makeCat(MainPage, "ComponentesSuportadosCat", "Componentes Suportados", 1)
+
+-- Item1 TOGGLE
+do
+    local row = makeItemRow(compItems, 1)
+    makeTag(row, "TOGGLE", 52)
+    makeItemLabel(row, "Toggle simples", 70)
+    makeToggle(row)
+end
+
+-- Item2 TOG+BTN
+do
+    local row = makeItemRow(compItems, 2)
+    makeTag(row, "TOG+BTN", 60)
+    makeItemLabel(row, "Toggle com botao", 78)
+    makeBtn(row, "Acao", "Btn_Acao", UDim2.new(1,-118,0.5,-11))
+    makeToggle(row)
+end
+
+-- Item3 TOG+SLIDE
+do
+    local row = makeItemRow(compItems, 3)
+    makeTag(row, "TOG+SLIDE", 68)
+    makeItemLabel(row, "Toggle com slider", 86)
+    makeSlider(row, UDim2.new(1,-198,0.5,-9))
+    makeToggle(row)
+end
+
+-- Item4 DROP+BTN
+do
+    local item4 = Instance.new("Frame", compItems)
+    item4.ZIndex           = 5
+    item4.BorderSizePixel  = 0
+    item4.AutomaticSize    = Enum.AutomaticSize.Y
+    item4.Size             = UDim2.new(1,0,0,0)
+    item4.Name             = "Item4"
+    item4.LayoutOrder      = 4
+    item4.BackgroundTransparency = 1
+    local il4 = Instance.new("UIListLayout", item4)
+    il4.SortOrder = Enum.SortOrder.LayoutOrder
+    local d4 = Instance.new("Frame", item4)
+    d4.BorderSizePixel  = 0; d4.BackgroundColor3 = Color3.fromRGB(13,13,13)
+    d4.Size = UDim2.new(1,0,0,1); d4.Name = "Div"; d4.LayoutOrder = 99
+
+    local row1 = Instance.new("Frame", item4)
+    row1.BorderSizePixel  = 0; row1.Size = UDim2.new(1,0,0,44)
+    row1.Name = "Row1"; row1.LayoutOrder = 1; row1.BackgroundTransparency = 1
+
+    makeTag(row1, "DROP+BTN", 62)
+    makeItemLabel(row1, "Dropdown + botao", 80)
+
+    local ddFrame = Instance.new("Frame", row1)
+    ddFrame.ZIndex           = 10; ddFrame.BorderSizePixel = 0
+    ddFrame.BackgroundColor3 = Color3.fromRGB(11,0,19)
+    ddFrame.Size             = UDim2.new(0,108,0,28)
+    ddFrame.Position         = UDim2.new(1,-178,0.5,-14)
+    ddFrame.Name             = "DropFrame"
+    ddFrame:SetAttribute("DDPanelName", "DDPanel_605349")
+    corner(ddFrame, 6)
+    stroke(ddFrame, Color3.fromRGB(51,0,91))
+
+    local selTxt = Instance.new("TextLabel", ddFrame)
+    selTxt.TextSize       = 11; selTxt.TextXAlignment = Enum.TextXAlignment.Left
+    selTxt.FontFace       = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+    selTxt.TextColor3     = Color3.fromRGB(181,141,221)
+    selTxt.BackgroundTransparency = 1
+    selTxt.Size           = UDim2.new(1,-32,1,0)
+    selTxt.Text           = "Player1"; selTxt.Name = "SelTxt"
+    selTxt.Position       = UDim2.new(0,10,0,0)
+
+    local arrIcon = Instance.new("TextLabel", ddFrame)
+    arrIcon.TextSize      = 14
+    arrIcon.FontFace      = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+    arrIcon.TextColor3    = Color3.fromRGB(154,69,222)
+    arrIcon.BackgroundTransparency = 1
+    arrIcon.Size          = UDim2.new(0,20,0,28)
+    arrIcon.Text          = "⌄"; arrIcon.Name = "ArrIcon"
+    arrIcon.Position      = UDim2.new(1,-24,0,0)
+
+    local sep = Instance.new("Frame", ddFrame)
+    sep.BorderSizePixel  = 0; sep.BackgroundColor3 = Color3.fromRGB(51,0,91)
+    sep.Size = UDim2.new(0,1,0,16); sep.Position = UDim2.new(1,-26,0.5,-8); sep.Name = "Sep"
+
+    makeBtn(row1, "Acao", "Btn_Acao", UDim2.new(1,-63,0.5,-11))
+end
+
+-- Item5 FLOAT+BTN
+do
+    local item5 = Instance.new("Frame", compItems)
+    item5.ZIndex           = 5; item5.BorderSizePixel = 0
+    item5.AutomaticSize    = Enum.AutomaticSize.Y
+    item5.Size             = UDim2.new(1,0,0,0)
+    item5.Name             = "Item5"; item5.LayoutOrder = 5
+    item5.BackgroundTransparency = 1
+    local il5 = Instance.new("UIListLayout", item5)
+    il5.SortOrder = Enum.SortOrder.LayoutOrder
+    local d5 = Instance.new("Frame", item5)
+    d5.BorderSizePixel  = 0; d5.BackgroundColor3 = Color3.fromRGB(13,13,13)
+    d5.Size = UDim2.new(1,0,0,1); d5.Name = "Div"; d5.LayoutOrder = 99
+
+    local row1 = Instance.new("Frame", item5)
+    row1.BorderSizePixel = 0; row1.Size = UDim2.new(1,0,0,44)
+    row1.Name = "Row1"; row1.LayoutOrder = 1; row1.BackgroundTransparency = 1
+
+    makeTag(row1, "FLOAT+BTN", 66)
+    makeItemLabel(row1, "Float + botao", 84)
+
+    local bFloat = Instance.new("TextButton", row1)
+    bFloat.BorderSizePixel  = 0; bFloat.TextSize = 10
+    bFloat.TextColor3  = Color3.fromRGB(154,69,222)
+    bFloat.BackgroundColor3 = Color3.fromRGB(16,0,27)
+    bFloat.FontFace    = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+    bFloat.Size        = UDim2.new(0,62,0,22); bFloat.Text = "Float"
+    bFloat.Name        = "Btn_Float"; bFloat.Position = UDim2.new(1,-128,0.5,-11)
+    corner(bFloat, 3); stroke(bFloat, Color3.fromRGB(51,0,97))
+
+    makeBtn(row1, "Acao", "Btn_Acao", UDim2.new(1,-62,0.5,-11), 58)
+
+    -- FloatCfgPanel
+    local fcp = Instance.new("Frame", item5)
+    fcp.Visible = false; fcp.ZIndex = 10; fcp.BorderSizePixel = 0
+    fcp.BackgroundColor3 = Color3.fromRGB(9,0,15)
+    fcp.AutomaticSize = Enum.AutomaticSize.Y
+    fcp.Size = UDim2.new(1,0,0,0); fcp.Name = "FloatCfgPanel"; fcp.LayoutOrder = 2
+    corner(fcp, 4); stroke(fcp, Color3.fromRGB(23,0,38))
+    local fcpPad = Instance.new("UIPadding", fcp)
+    fcpPad.PaddingTop = UDim.new(0,8); fcpPad.PaddingRight = UDim.new(0,8)
+    fcpPad.PaddingLeft = UDim.new(0,8); fcpPad.PaddingBottom = UDim.new(0,8)
+    local fcpLL = Instance.new("UIListLayout", fcp)
+    fcpLL.Padding = UDim.new(0,6); fcpLL.SortOrder = Enum.SortOrder.LayoutOrder
+
+    -- PR1 Label input
+    local pr1 = Instance.new("Frame", fcp)
+    pr1.BorderSizePixel = 0; pr1.Size = UDim2.new(1,0,0,24)
+    pr1.Name = "PR1"; pr1.LayoutOrder = 1; pr1.BackgroundTransparency = 1
+    local lbl1 = Instance.new("TextLabel", pr1)
+    lbl1.TextSize = 10; lbl1.TextXAlignment = Enum.TextXAlignment.Left
+    lbl1.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+    lbl1.TextColor3 = Color3.fromRGB(86,86,86); lbl1.BackgroundTransparency = 1
+    lbl1.Size = UDim2.new(0,55,0,24); lbl1.Text = "Label"
+    local lblInp = Instance.new("TextBox", pr1)
+    lblInp.Name = "LblInp"; lblInp.TextXAlignment = Enum.TextXAlignment.Left
+    lblInp.PlaceholderColor3 = Color3.fromRGB(52,52,52); lblInp.BorderSizePixel = 0
+    lblInp.TextSize = 11; lblInp.TextColor3 = Color3.fromRGB(171,171,171)
+    lblInp.BackgroundColor3 = Color3.fromRGB(14,14,14)
+    lblInp.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+    lblInp.ClearTextOnFocus = false; lblInp.PlaceholderText = "Label..."
+    lblInp.Size = UDim2.new(1,-62,0,20); lblInp.Position = UDim2.new(0,60,0,2)
+    lblInp.Text = "Auto Shot"
+    corner(lblInp, 3); stroke(lblInp, Color3.fromRGB(35,0,57))
+
+    -- PR2 Width slider
+    local function makeFCPSlider(parent, bgName, valName, labelText, order)
+        local pr = Instance.new("Frame", parent)
+        pr.BorderSizePixel = 0; pr.Size = UDim2.new(1,0,0,24)
+        pr.Name = "PR"..order; pr.LayoutOrder = order; pr.BackgroundTransparency = 1
+        local tl = Instance.new("TextLabel", pr)
+        tl.TextSize = 10; tl.TextXAlignment = Enum.TextXAlignment.Left
+        tl.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+        tl.TextColor3 = Color3.fromRGB(86,86,86); tl.BackgroundTransparency = 1
+        tl.Size = UDim2.new(0,55,0,24); tl.Text = labelText
+        local bg = Instance.new("Frame", pr)
+        bg.BorderSizePixel = 0; bg.BackgroundColor3 = Color3.fromRGB(35,0,57)
+        bg.Size = UDim2.new(1,-90,0,4); bg.Position = UDim2.new(0,58,0,10)
+        bg.Name = bgName; corner(bg, 2)
+        local fill = Instance.new("Frame", bg)
+        fill.BorderSizePixel = 0; fill.BackgroundColor3 = Color3.fromRGB(120,0,188)
+        fill.Size = UDim2.new(0.5,0,1,0); fill.Name = "Fill"; corner(fill, 2)
+        local knob = Instance.new("Frame", bg)
+        knob.BorderSizePixel = 0; knob.BackgroundColor3 = Color3.fromRGB(120,0,188)
+        knob.Size = UDim2.new(0,10,0,10); knob.Position = UDim2.new(0.5,-5,0.5,-5)
+        knob.Name = "Knob"; corner(knob, 5)
+        local vl = Instance.new("TextLabel", pr)
+        vl.TextSize = 10
+        vl.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+        vl.TextColor3 = Color3.fromRGB(120,69,171); vl.BackgroundTransparency = 1
+        vl.Size = UDim2.new(0,30,0,24); vl.Text = "90px"
+        vl.Name = valName; vl.Position = UDim2.new(1,-30,0,0)
+        return pr
+    end
+    makeFCPSlider(fcp, "WBG", "WVal", "Width",  2)
+    makeFCPSlider(fcp, "HBG", "HVal", "Height", 3)
+
+    -- PR4 Lock/Save
+    local pr4 = Instance.new("Frame", fcp)
+    pr4.BorderSizePixel = 0; pr4.Size = UDim2.new(1,0,0,26)
+    pr4.Name = "PR4"; pr4.LayoutOrder = 4; pr4.BackgroundTransparency = 1
+
+    local lkBtn = Instance.new("TextButton", pr4)
+    lkBtn.BorderSizePixel = 0; lkBtn.TextSize = 10
+    lkBtn.TextColor3 = Color3.fromRGB(69,0,103); lkBtn.BackgroundColor3 = Color3.fromRGB(11,0,16)
+    lkBtn.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+    lkBtn.Size = UDim2.new(0,72,0,22); lkBtn.Text = "Livre"; lkBtn.Name = "LockBtn"
+    corner(lkBtn, 3); stroke(lkBtn, Color3.fromRGB(27,0,41))
+
+    local svBtn = Instance.new("TextButton", pr4)
+    svBtn.BorderSizePixel = 0; svBtn.TextSize = 10
+    svBtn.TextColor3 = Color3.fromRGB(205,137,255); svBtn.BackgroundColor3 = Color3.fromRGB(62,0,108)
+    svBtn.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+    svBtn.Size = UDim2.new(0,80,0,22); svBtn.Text = "Save Pos"; svBtn.Name = "SaveBtn"
+    svBtn.Position = UDim2.new(0,78,0,0)
+    corner(svBtn, 3); stroke(svBtn, Color3.fromRGB(120,0,188))
+end
+
+-- Item6 KEYBIND
+do
+    local item6 = Instance.new("Frame", compItems)
+    item6.ZIndex = 5; item6.BorderSizePixel = 0
+    item6.AutomaticSize = Enum.AutomaticSize.Y
+    item6.Size = UDim2.new(1,0,0,0); item6.Name = "Item6"; item6.LayoutOrder = 6
+    item6.BackgroundTransparency = 1
+    local il6 = Instance.new("UIListLayout", item6); il6.SortOrder = Enum.SortOrder.LayoutOrder
+    local d6 = Instance.new("Frame", item6)
+    d6.BorderSizePixel = 0; d6.BackgroundColor3 = Color3.fromRGB(13,13,13)
+    d6.Size = UDim2.new(1,0,0,1); d6.Name = "Div"; d6.LayoutOrder = 99
+
+    local row1 = Instance.new("Frame", item6)
+    row1.BorderSizePixel = 0; row1.Size = UDim2.new(1,0,0,44)
+    row1.Name = "Row1"; row1.LayoutOrder = 1; row1.BackgroundTransparency = 1
+
+    makeTag(row1, "KEYBIND", 58)
+    makeItemLabel(row1, "Hotkey de atalho", 76)
+
+    local kbBtn = Instance.new("TextButton", row1)
+    kbBtn.BorderSizePixel = 0; kbBtn.TextSize = 11
+    kbBtn.TextColor3 = Color3.fromRGB(154,69,222); kbBtn.BackgroundColor3 = Color3.fromRGB(16,0,27)
+    kbBtn.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+    kbBtn.Size = UDim2.new(0,32,0,22); kbBtn.Text = "F"; kbBtn.Name = "KeybindBtn"
+    kbBtn.Position = UDim2.new(1,-96,0.5,-11)
+    corner(kbBtn, 3); stroke(kbBtn, Color3.fromRGB(51,0,97))
+    makeToggle(row1)
+end
+
+-- Item7 BOTAO
+do
+    local row = makeItemRow(compItems, 7)
+    makeTag(row, "BOTAO", 46)
+    makeItemLabel(row, "Botao de execucao", 64)
+    makeBtn(row, "Run", "Btn_Run", UDim2.new(1,-68,0.5,-11))
+end
+
+-- Categoria 2: Teste de Scroll
+local scrollCat, scrollItems = makeCat(MainPage, "TestedeScrollCat", "Teste de Scroll", 2)
+for i = 1, 4 do
+    local row = makeItemRow(scrollItems, i)
+    makeTag(row, "TESTE", 46)
+    makeItemLabel(row, "Botao de teste "..i, 64)
+    makeBtn(row, "Acao", "Btn_Acao", UDim2.new(1,-68,0.5,-11))
+end
+
+-- ================================================================
+-- SETTINGS PAGE
+-- ================================================================
+local SettingsPage = Instance.new("ScrollingFrame", Cont)
+SettingsPage.Visible             = false
+SettingsPage.BorderSizePixel     = 0
+SettingsPage.CanvasSize          = UDim2.new(0,0,0,0)
+SettingsPage.Name                = "SettingsPage"
+SettingsPage.AutomaticCanvasSize = Enum.AutomaticSize.Y
+SettingsPage.Size                = UDim2.new(1,0,1,0)
+SettingsPage.ScrollBarImageColor3 = Color3.fromRGB(62,0,108)
+SettingsPage.ScrollBarThickness  = 3
+SettingsPage.BackgroundTransparency = 1
+local _spl = Instance.new("UIListLayout", SettingsPage)
+_spl.Padding = UDim.new(0,8); _spl.SortOrder = Enum.SortOrder.LayoutOrder
+local _spp = Instance.new("UIPadding", SettingsPage)
+_spp.PaddingTop = UDim.new(0,8); _spp.PaddingRight = UDim.new(0,7)
+_spp.PaddingLeft = UDim.new(0,7); _spp.PaddingBottom = UDim.new(0,8)
+
+local cfgCat, cfgItems = makeCat(SettingsPage, "ConfigurationsCat", "Configurations", 1)
+
+-- Settings Item1: Save config input
+do
+    local row = Instance.new("Frame", cfgItems)
+    row.BorderSizePixel = 0; row.Size = UDim2.new(1,0,0,44)
+    row.Name = "Item1"; row.LayoutOrder = 1; row.BackgroundTransparency = 1
+    local d = Instance.new("Frame", row)
+    d.BorderSizePixel = 0; d.BackgroundColor3 = Color3.fromRGB(13,13,13)
+    d.Size = UDim2.new(1,0,0,1); d.Position = UDim2.new(0,0,1,-1); d.Name = "Div"
+
+    local cfgInp = Instance.new("TextBox", row)
+    cfgInp.Name = "CfgInput"; cfgInp.TextXAlignment = Enum.TextXAlignment.Left
+    cfgInp.PlaceholderColor3 = Color3.fromRGB(52,52,52); cfgInp.BorderSizePixel = 0
+    cfgInp.TextSize = 12; cfgInp.TextColor3 = Color3.fromRGB(171,171,171)
+    cfgInp.BackgroundColor3 = Color3.fromRGB(14,14,14)
+    cfgInp.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+    cfgInp.ClearTextOnFocus = false; cfgInp.PlaceholderText = "Config name..."
+    cfgInp.Size = UDim2.new(1,-80,0,28); cfgInp.Position = UDim2.new(0,8,0,8); cfgInp.Text = ""
+    corner(cfgInp, 5); stroke(cfgInp, Color3.fromRGB(35,0,57))
+    local _cp = Instance.new("UIPadding", cfgInp)
+    _cp.PaddingRight = UDim.new(0,8); _cp.PaddingLeft = UDim.new(0,8)
+
+    local saveCfgBtn = Instance.new("TextButton", row)
+    saveCfgBtn.BorderSizePixel = 0; saveCfgBtn.TextSize = 11
+    saveCfgBtn.TextColor3 = Color3.fromRGB(205,137,255); saveCfgBtn.BackgroundColor3 = Color3.fromRGB(62,0,108)
+    saveCfgBtn.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+    saveCfgBtn.Size = UDim2.new(0,60,0,28); saveCfgBtn.Text = "Save"
+    saveCfgBtn.Name = "SaveCfgBtn"; saveCfgBtn.Position = UDim2.new(1,-68,0,8)
+    corner(saveCfgBtn, 5); stroke(saveCfgBtn, Color3.fromRGB(120,0,188))
+end
+
+-- Settings Item2: Config dropdown
+do
+    local item2 = Instance.new("Frame", cfgItems)
+    item2.ZIndex = 5; item2.BorderSizePixel = 0
+    item2.AutomaticSize = Enum.AutomaticSize.Y
+    item2.Size = UDim2.new(1,0,0,0); item2.Name = "Item2"; item2.LayoutOrder = 2
+    item2.BackgroundTransparency = 1
+    local il2 = Instance.new("UIListLayout", item2); il2.SortOrder = Enum.SortOrder.LayoutOrder
+    local d2 = Instance.new("Frame", item2)
+    d2.BorderSizePixel = 0; d2.BackgroundColor3 = Color3.fromRGB(13,13,13)
+    d2.Size = UDim2.new(1,0,0,1); d2.Name = "Div"; d2.LayoutOrder = 99
+
+    local row1 = Instance.new("Frame", item2)
+    row1.BorderSizePixel = 0; row1.Size = UDim2.new(1,0,0,36)
+    row1.Name = "Row1"; row1.LayoutOrder = 1; row1.BackgroundTransparency = 1
+
+    local selFrame = Instance.new("Frame", row1)
+    selFrame.BorderSizePixel = 0; selFrame.BackgroundColor3 = Color3.fromRGB(14,14,14)
+    selFrame.Size = UDim2.new(1,-16,0,28); selFrame.Position = UDim2.new(0,8,0,4)
+    selFrame.Name = "SelectFrame"; corner(selFrame, 5); stroke(selFrame, Color3.fromRGB(35,0,57))
+
+    local selLbl = Instance.new("TextLabel", selFrame)
+    selLbl.TextSize = 12; selLbl.TextXAlignment = Enum.TextXAlignment.Left
+    selLbl.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+    selLbl.TextColor3 = Color3.fromRGB(103,103,103); selLbl.BackgroundTransparency = 1
+    selLbl.Size = UDim2.new(1,-20,1,0); selLbl.Text = "-- select config --"; selLbl.Name = "SelLbl"
+    selLbl.Position = UDim2.new(0,8,0,0)
+
+    local selArr = Instance.new("TextLabel", selFrame)
+    selArr.TextSize = 10
+    selArr.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+    selArr.TextColor3 = Color3.fromRGB(103,103,103); selArr.BackgroundTransparency = 1
+    selArr.Size = UDim2.new(0,16,0,28); selArr.Text = "v"; selArr.Name = "SelArr"
+    selArr.Position = UDim2.new(1,-20,0,0)
+
+    local cfgDropPanel = Instance.new("Frame", item2)
+    cfgDropPanel.Visible = false; cfgDropPanel.ZIndex = 10; cfgDropPanel.BorderSizePixel = 0
+    cfgDropPanel.BackgroundColor3 = Color3.fromRGB(9,0,15)
+    cfgDropPanel.AutomaticSize = Enum.AutomaticSize.Y
+    cfgDropPanel.Size = UDim2.new(1,0,0,0); cfgDropPanel.Name = "CfgDropPanel"; cfgDropPanel.LayoutOrder = 2
+    corner(cfgDropPanel, 4); stroke(cfgDropPanel, Color3.fromRGB(23,0,38))
+    local _cdp = Instance.new("UIPadding", cfgDropPanel)
+    _cdp.PaddingTop = UDim.new(0,8); _cdp.PaddingRight = UDim.new(0,8)
+    _cdp.PaddingLeft = UDim.new(0,8); _cdp.PaddingBottom = UDim.new(0,8)
+    local _cdl = Instance.new("UIListLayout", cfgDropPanel)
+    _cdl.Padding = UDim.new(0,6); _cdl.SortOrder = Enum.SortOrder.LayoutOrder
+
+    local emptyLbl = Instance.new("TextLabel", cfgDropPanel)
+    emptyLbl.TextSize = 11
+    emptyLbl.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+    emptyLbl.TextColor3 = Color3.fromRGB(69,69,69); emptyLbl.BackgroundTransparency = 1
+    emptyLbl.Size = UDim2.new(1,0,0,24); emptyLbl.Text = "Nenhuma config salva"
+    emptyLbl.LayoutOrder = 1; emptyLbl.Name = "EmptyLbl"
+end
+
+-- Settings Item3: Global keybind
+do
+    local item3 = Instance.new("Frame", cfgItems)
+    item3.ZIndex = 5; item3.BorderSizePixel = 0
+    item3.AutomaticSize = Enum.AutomaticSize.Y
+    item3.Size = UDim2.new(1,0,0,0); item3.Name = "Item3"; item3.LayoutOrder = 3
+    item3.BackgroundTransparency = 1
+    local il3 = Instance.new("UIListLayout", item3); il3.SortOrder = Enum.SortOrder.LayoutOrder
+    local d3 = Instance.new("Frame", item3)
+    d3.BorderSizePixel = 0; d3.BackgroundColor3 = Color3.fromRGB(13,13,13)
+    d3.Size = UDim2.new(1,0,0,1); d3.Name = "Div"; d3.LayoutOrder = 99
+
+    local row1 = Instance.new("Frame", item3)
+    row1.BorderSizePixel = 0; row1.Size = UDim2.new(1,0,0,36)
+    row1.Name = "Row1"; row1.LayoutOrder = 1; row1.BackgroundTransparency = 1
+
+    local tl = Instance.new("TextLabel", row1)
+    tl.TextSize = 12; tl.TextXAlignment = Enum.TextXAlignment.Left
+    tl.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+    tl.TextColor3 = Color3.fromRGB(193,193,193); tl.BackgroundTransparency = 1
+    tl.Size = UDim2.new(1,-100,1,0); tl.Text = "Keybind (abrir/fechar)"
+    tl.Position = UDim2.new(0,11,0,0)
+
+    local skbBtn = Instance.new("TextButton", row1)
+    skbBtn.BorderSizePixel = 0; skbBtn.TextSize = 9
+    skbBtn.TextColor3 = Color3.fromRGB(154,69,222); skbBtn.BackgroundColor3 = Color3.fromRGB(16,0,27)
+    skbBtn.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+    skbBtn.Size = UDim2.new(0,50,0,22); skbBtn.Text = "LeftAlt"
+    skbBtn.Name = "SettingsKeybindBtn"; skbBtn.Position = UDim2.new(1,-60,0.5,-11)
+    corner(skbBtn, 3); stroke(skbBtn, Color3.fromRGB(51,0,97))
+end
+
+-- Settings Item4: Load/Update/Delete buttons
+do
+    local row = Instance.new("Frame", cfgItems)
+    row.BorderSizePixel = 0; row.Size = UDim2.new(1,0,0,40)
+    row.Name = "Item4"; row.LayoutOrder = 4; row.BackgroundTransparency = 1
+    local d = Instance.new("Frame", row)
+    d.BorderSizePixel = 0; d.BackgroundColor3 = Color3.fromRGB(13,13,13)
+    d.Size = UDim2.new(1,0,0,1); d.Position = UDim2.new(0,0,1,-1); d.Name = "Div"
+
+    local function makeCfgBtn(text, name, xOff, tc, bc, sc)
+        local b = Instance.new("TextButton", row)
+        b.BorderSizePixel = 0; b.TextSize = 10
+        b.TextColor3 = tc; b.BackgroundColor3 = Color3.fromRGB(16,0,27)
+        b.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+        b.Size = UDim2.new(0,76,0,26); b.Text = text; b.Name = name
+        b.Position = UDim2.new(0,xOff,0,7)
+        corner(b, 5); stroke(b, sc); return b
+    end
+    makeCfgBtn("Load",   "LoadBtn",   8,   Color3.fromRGB(154,69,222), nil, Color3.fromRGB(51,0,97))
+    makeCfgBtn("Update", "UpdateBtn", 90,  Color3.fromRGB(154,69,222), nil, Color3.fromRGB(51,0,97))
+    makeCfgBtn("Delete", "DeleteBtn", 172, Color3.fromRGB(205,52,52),  nil, Color3.fromRGB(75,0,0))
+end
+
+-- Settings Item5: Auto-load
+do
+    local row = Instance.new("Frame", cfgItems)
+    row.BorderSizePixel = 0; row.Size = UDim2.new(1,0,0,48)
+    row.Name = "Item5"; row.LayoutOrder = 5; row.BackgroundTransparency = 1
+    local d = Instance.new("Frame", row)
+    d.BorderSizePixel = 0; d.BackgroundColor3 = Color3.fromRGB(13,13,13)
+    d.Size = UDim2.new(1,0,0,1); d.Position = UDim2.new(0,0,1,-1); d.Name = "Div"
+
+    local autoFrame = Instance.new("Frame", row)
+    autoFrame.BorderSizePixel = 0; autoFrame.BackgroundColor3 = Color3.fromRGB(11,0,17)
+    autoFrame.Size = UDim2.new(1,-16,0,36); autoFrame.Position = UDim2.new(0,8,0,6)
+    autoFrame.Name = "AutoFrame"; corner(autoFrame, 5); stroke(autoFrame, Color3.fromRGB(27,0,41))
+
+    local atl = Instance.new("TextLabel", autoFrame)
+    atl.TextSize = 12; atl.TextXAlignment = Enum.TextXAlignment.Left
+    atl.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+    atl.TextColor3 = Color3.fromRGB(193,193,193); atl.BackgroundTransparency = 1
+    atl.Size = UDim2.new(1,-60,0,16); atl.Text = "Auto-load on start"
+    atl.Position = UDim2.new(0,10,0,4)
+
+    local autoVal = Instance.new("TextLabel", autoFrame)
+    autoVal.TextSize = 10; autoVal.TextXAlignment = Enum.TextXAlignment.Left
+    autoVal.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular)
+    autoVal.TextColor3 = Color3.fromRGB(69,0,120); autoVal.BackgroundTransparency = 1
+    autoVal.Size = UDim2.new(1,-60,0,12); autoVal.Text = '"none"'
+    autoVal.Name = "AutoVal"; autoVal.Position = UDim2.new(0,10,0,22)
+
+    makeToggle(autoFrame, UDim2.new(1,-54,0.5,-9), true)
+end
+
+-- ================================================================
+-- DD PANEL (dropdown flutuante)
+-- ================================================================
+local DDPanel = Instance.new("ScrollingFrame", SG)
+DDPanel.Visible              = false
+DDPanel.ScrollingDirection   = Enum.ScrollingDirection.Y
+DDPanel.ZIndex               = 200; DDPanel.BorderSizePixel = 0
+DDPanel.CanvasSize           = UDim2.new(0,0,0,128)
+DDPanel.Name                 = "DDPanel_605349"
+DDPanel.BackgroundColor3     = Color3.fromRGB(11,0,19)
+DDPanel.Size                 = UDim2.new(0,108,0,128)
+DDPanel.ScrollBarImageColor3 = Color3.fromRGB(101,0,161)
+DDPanel.ScrollBarThickness   = 3
+DDPanel:SetAttribute("PanelH", 128); DDPanel:SetAttribute("DDOwner", "DropFrame")
+corner(DDPanel, 6); stroke(DDPanel, Color3.fromRGB(51,0,91))
+local _ddl = Instance.new("UIListLayout", DDPanel); _ddl.SortOrder = Enum.SortOrder.LayoutOrder
+local _ddp = Instance.new("UIPadding", DDPanel)
+_ddp.PaddingTop = UDim.new(0,8); _ddp.PaddingRight = UDim.new(0,4)
+_ddp.PaddingLeft = UDim.new(0,4); _ddp.PaddingBottom = UDim.new(0,8)
+
+local dragHandle = Instance.new("Frame", DDPanel)
+dragHandle.ZIndex = 201; dragHandle.BorderSizePixel = 0
+dragHandle.BackgroundColor3 = Color3.fromRGB(31,0,51)
+dragHandle.Size = UDim2.new(1,-8,0,10); dragHandle.Name = "DragHandle"
+corner(dragHandle, 4)
+local dhBar = Instance.new("Frame", dragHandle)
+dhBar.BorderSizePixel = 0; dhBar.BackgroundColor3 = Color3.fromRGB(121,61,181)
+dhBar.Size = UDim2.new(0,24,0,3); dhBar.Position = UDim2.new(0.5,-12,0.5,-1)
+corner(dhBar, 2)
+
+local function makeDDOpt(name, text, order, selected)
+    local opt = Instance.new("TextButton", DDPanel)
+    opt.BorderSizePixel = 0; opt.AutoButtonColor = false
+    opt.BackgroundColor3 = Color3.fromRGB(19,0,31)
+    opt.Size = UDim2.new(1,-8,0,34); opt.LayoutOrder = order
+    opt.Text = ""; opt.Name = name; corner(opt, 5)
+
+    local selBar = Instance.new("Frame", opt)
+    selBar.Visible = selected; selBar.BorderSizePixel = 0
+    selBar.BackgroundColor3 = Color3.fromRGB(120,0,188)
+    selBar.Size = UDim2.new(0,3,0,18); selBar.Position = UDim2.new(0,6,0,8)
+    selBar.Name = "SelBar"; corner(selBar, 2)
+
+    local optTxt = Instance.new("TextLabel", opt)
+    optTxt.TextSize = 11; optTxt.TextXAlignment = Enum.TextXAlignment.Left
+    optTxt.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Regular)
+    optTxt.TextColor3 = selected and Color3.fromRGB(181,121,241) or Color3.fromRGB(131,101,161)
+    optTxt.BackgroundTransparency = 1
+    optTxt.Size = UDim2.new(1,-28,1,0); optTxt.Text = text
+    optTxt.Name = "OptTxt"; optTxt.Position = UDim2.new(0,18,0,0)
+
+    local check = Instance.new("TextLabel", opt)
+    check.TextSize = 11
+    check.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+    check.TextColor3 = Color3.fromRGB(154,69,222); check.BackgroundTransparency = 1
+    check.Size = UDim2.new(0,20,0,34); check.Text = selected and "✓" or ""
+    check.Name = "Check"; check.Position = UDim2.new(1,-22,0,0)
+    return opt
+end
+
+makeDDOpt("Opt1", "Player1", 1, true)
+makeDDOpt("Opt2", "Player2", 2, false)
+makeDDOpt("Opt3", "Player3", 3, false)
+
+-- ================================================================
+-- CONTROLLER (lógica)
+-- ================================================================
+do
+    local TS  = game:GetService("TweenService")
+    local UIS = game:GetService("UserInputService")
+    local CAS = game:GetService("ContextActionService")
+    local Camera = workspace.CurrentCamera
+    local currentKey = Enum.KeyCode.LeftAlt
+
+    local DRAG_ACTION = "KhaosUIDrag"
+    local function lockCamera()
+        CAS:BindAction(DRAG_ACTION, function() return Enum.ContextActionResult.Sink end, false,
+            Enum.UserInputType.Touch, Enum.UserInputType.MouseButton1,
+            Enum.UserInputType.MouseMovement)
+    end
+    local function unlockCamera() CAS:UnbindAction(DRAG_ACTION) end
+
+    local BASE_W, BASE_H, MARGIN = 580, 460, 30
+
+    local function getScale()
+        local vp = Camera.ViewportSize
+        local minDim = math.min(vp.X, vp.Y)
+        local availW = math.max(vp.X - MARGIN*2, 1)
+        local availH = math.max(vp.Y - MARGIN*2, 1)
+        local scale  = math.min(availW/BASE_W, availH/BASE_H)
+        if minDim < 600 then scale = scale * 0.82 end
+        return math.clamp(scale, 0.42, 1.05)
+    end
+
+    local function safeClamp(val, lo, hi)
+        if lo > hi then return (lo+hi)*0.5 end
+        return math.clamp(val, lo, hi)
+    end
+
+    local function clampWinPosition()
+        task.defer(function()
+            local vp  = Camera.ViewportSize
+            local sz  = Win.AbsoluteSize
+            local abs = Win.AbsolutePosition
+            local cx  = abs.X + sz.X*0.5; local cy = abs.Y + sz.Y*0.5
+            local hw  = sz.X*0.5; local hh = sz.Y*0.5
+            local newCX = safeClamp(cx, hw+MARGIN, vp.X-hw-MARGIN)
+            local newCY = safeClamp(cy, hh+MARGIN, vp.Y-hh-MARGIN)
+            if math.abs(newCX-cx)>1 or math.abs(newCY-cy)>1 then
+                Win.Position = UDim2.fromOffset(newCX, newCY)
+            end
+        end)
+    end
+
+    local function applyScale()
+        local scale = getScale()
+        TS:Create(MainScale, TweenInfo.new(0.25, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
+            {Scale=scale}):Play()
+        clampWinPosition()
+    end
+    applyScale()
+
+    Camera:GetPropertyChangedSignal("ViewportSize"):Connect(function()
+        applyScale()
+        task.defer(function()
+            local vp = Camera.ViewportSize
+            local abs = TUI.AbsolutePosition; local sz = TUI.AbsoluteSize
+            if abs.X+sz.X > vp.X-8 or abs.X < 8 or abs.Y+sz.Y > vp.Y-8 or abs.Y < 8 then
+                TUI.Position = UDim2.new(0.5,-18,0,12)
+            end
+        end)
+    end)
+
+    -- Drag system
+    local activeDrag = nil
+
+    local function applyDragMove(curX, curY)
+        if not activeDrag then return end
+        local d = activeDrag
+        local delta = Vector2.new(curX-d.startCurX, curY-d.startCurY)
+        if not d.moved and delta.Magnitude > 4 then d.moved = true end
+        if not d.moved then return end
+        local newX = d.startObjX + delta.X
+        local newY = d.startObjY + delta.Y
+        if d.isWin then
+            local vp = Camera.ViewportSize
+            local sw = d.dragObj.AbsoluteSize.X; local sh = d.dragObj.AbsoluteSize.Y
+            newX = safeClamp(newX, sw*0.5+MARGIN, vp.X-sw*0.5-MARGIN)
+            newY = safeClamp(newY, sh*0.5+MARGIN, vp.Y-sh*0.5-MARGIN)
+        end
+        d.dragObj.Position = UDim2.fromOffset(newX, newY)
+    end
+
+    UIS.InputChanged:Connect(function(i)
+        if not activeDrag then return end
+        if i.UserInputType == Enum.UserInputType.MouseMovement then applyDragMove(i.Position.X, i.Position.Y) end
+    end)
+    UIS.TouchMoved:Connect(function(touch)
+        if not activeDrag then return end
+        applyDragMove(touch.Position.X, touch.Position.Y)
+    end)
+
+    local function makeDraggable(handle, dragObj, onTap)
+        handle.InputBegan:Connect(function(i)
+            if i.UserInputType ~= Enum.UserInputType.MouseButton1
+            and i.UserInputType ~= Enum.UserInputType.Touch then return end
+            if activeDrag then return end
+            local par    = dragObj.Parent
+            local parAbs = par and par.AbsolutePosition or Vector2.zero
+            local ax = dragObj.AnchorPoint.X; local ay = dragObj.AnchorPoint.Y
+            local sw = dragObj.AbsoluteSize.X; local sh = dragObj.AbsoluteSize.Y
+            local absAnchorX = dragObj.AbsolutePosition.X + ax*sw
+            local absAnchorY = dragObj.AbsolutePosition.Y + ay*sh
+            activeDrag = {
+                dragObj   = dragObj,
+                startCurX = i.Position.X, startCurY = i.Position.Y,
+                startObjX = absAnchorX - parAbs.X,
+                startObjY = absAnchorY - parAbs.Y,
+                moved = false, isWin = (ax==0.5),
+            }
+            lockCamera()
+        end)
+        handle.InputEnded:Connect(function(i)
+            if i.UserInputType ~= Enum.UserInputType.MouseButton1
+            and i.UserInputType ~= Enum.UserInputType.Touch then return end
+            if activeDrag and activeDrag.dragObj == dragObj then
+                if not activeDrag.moved and onTap then onTap() end
+                activeDrag = nil; unlockCamera()
+            end
+        end)
+    end
+
+    -- Animação abrir/fechar
+    local animating = false
+    local WIN_W, WIN_H = 580, 460
+    local WIN_SIZE  = UDim2.fromOffset(WIN_W, WIN_H)
+    local WIN_SIZE0 = UDim2.fromOffset(WIN_W, 0)
+    local tiOpen  = TweenInfo.new(0.30, Enum.EasingStyle.Back,  Enum.EasingDirection.Out)
+    local tiClose = TweenInfo.new(0.22, Enum.EasingStyle.Quart, Enum.EasingDirection.In)
+
+    local function openWin()
+        if animating then return end; animating = true
+        local savedPos = Win.Position
+        Win.Visible = true; Win.Size = WIN_SIZE0; Win.Position = savedPos
+        local t = TS:Create(Win, tiOpen, {Size=WIN_SIZE}); t:Play()
+        t.Completed:Connect(function() animating = false end)
+    end
+
+    local function closeWin()
+        if animating then return end; animating = true
+        local savedPos = Win.Position
+        local t = TS:Create(Win, tiClose, {Size=WIN_SIZE0}); t:Play()
+        t.Completed:Connect(function()
+            Win.Visible = false; Win.Size = WIN_SIZE; Win.Position = savedPos; animating = false
+        end)
+    end
+
+    CloseBtn.MouseButton1Click:Connect(closeWin)
+    UIS.InputBegan:Connect(function(i, gp)
+        if gp then return end
+        if i.KeyCode == currentKey then
+            if Win.Visible then closeWin() else openWin() end
+        end
+    end)
+
+    makeDraggable(Tbar, Win)
+    makeDraggable(TUI, TUI, function()
+        if Win.Visible then closeWin() else openWin() end
+    end)
+
+    -- Abas
+    local tabs = {"Main","Settings"}
+    local function activateTab(name)
+        for _, t in ipairs(tabs) do
+            local btn  = SideList:FindFirstChild(t.."TabBtn")
+            local page = Cont:FindFirstChild(t.."Page")
+            local on   = t == name
+            if page then page.Visible = on end
+            if btn then
+                btn.BackgroundColor3 = on and Color3.fromRGB(14,0,24) or Color3.fromRGB(2,2,2)
+                local ind = btn:FindFirstChild("Indicator")
+                if ind then ind.Visible = on end
+                local lbl = btn:FindFirstChild("Label")
+                if lbl then lbl.TextColor3 = on and Color3.fromRGB(176,106,238) or Color3.fromRGB(68,68,68) end
+            end
+        end
+    end
+    for _, t in ipairs(tabs) do
+        local btn = SideList:FindFirstChild(t.."TabBtn")
+        if btn then btn.MouseButton1Click:Connect(function() activateTab(t) end) end
+    end
+    activateTab("Main")
+
+    -- Categorias collapse/expand
+    for _, page in ipairs(Cont:GetChildren()) do
+        if page:IsA("ScrollingFrame") then
+            for _, cat in ipairs(page:GetChildren()) do
+                if cat.Name:find("Cat") then
+                    local hdr   = cat:FindFirstChild("Header")
+                    local items = cat:FindFirstChild("Items")
+                    local arrow = hdr and hdr:FindFirstChild("Arrow")
+                    if hdr and items then
+                        local open = true
+                        hdr.MouseButton1Click:Connect(function()
+                            open = not open
+                            items.Visible = open
+                            if arrow then arrow.Text = open and "^" or "v" end
+                        end)
+                    end
+                end
+            end
+        end
+    end
+
+    -- Toggles
+    local tiTog = TweenInfo.new(0.12, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+
+    local function setupToggle(desc)
+        if desc.Name ~= "ToggleFrame" or not desc:IsA("Frame") then return end
+        local knob = desc:FindFirstChild("Knob")
+        local function flip()
+            local isOn = not desc:GetAttribute("IsOn")
+            desc:SetAttribute("IsOn", isOn)
+            TS:Create(desc, tiTog, {BackgroundColor3=isOn and Color3.fromRGB(61,0,107) or Color3.fromRGB(17,17,17)}):Play()
+            local s = desc:FindFirstChildOfClass("UIStroke")
+            if s then s.Color = isOn and Color3.fromRGB(119,0,187) or Color3.fromRGB(34,0,56) end
+            if knob then
+                TS:Create(knob, tiTog, {
+                    Position = isOn and UDim2.fromOffset(19,3) or UDim2.fromOffset(3,3),
+                    BackgroundColor3 = isOn and Color3.fromRGB(187,119,255) or Color3.fromRGB(85,85,85),
+                }):Play()
+            end
+        end
+        desc.InputBegan:Connect(function(i)
+            if i.UserInputType==Enum.UserInputType.MouseButton1
+            or i.UserInputType==Enum.UserInputType.Touch then flip() end
+        end)
+    end
+
+    for _, d in ipairs(Win:GetDescendants()) do setupToggle(d) end
+
+    -- Sliders
+    for _, desc in ipairs(Cont:GetDescendants()) do
+        if desc.Name ~= "SliderBG" then continue end
+        local fill   = desc:FindFirstChild("Fill")
+        local knob   = desc:FindFirstChild("Knob")
+        local wrap   = desc.Parent
+        local valLbl = wrap and wrap:FindFirstChild("Val")
+        local minV, maxV = 0, 100
+        local sliding = false
+
+        local function applyPct(p)
+            p = math.clamp(p,0,1)
+            if fill  then fill.Size     = UDim2.new(p,0,1,0) end
+            if knob  then knob.Position = UDim2.new(p,-6,0.5,-6) end
+            if valLbl then valLbl.Text  = tostring(math.floor(minV+(maxV-minV)*p)) end
+        end
+
+        desc.InputBegan:Connect(function(i)
+            if i.UserInputType==Enum.UserInputType.MouseButton1
+            or i.UserInputType==Enum.UserInputType.Touch then
+                sliding=true; applyPct((i.Position.X-desc.AbsolutePosition.X)/desc.AbsoluteSize.X)
+            end
+        end)
+        desc.InputEnded:Connect(function(i)
+            if i.UserInputType==Enum.UserInputType.MouseButton1
+            or i.UserInputType==Enum.UserInputType.Touch then sliding=false end
+        end)
+        UIS.InputChanged:Connect(function(i)
+            if sliding and (i.UserInputType==Enum.UserInputType.MouseMovement
+            or i.UserInputType==Enum.UserInputType.Touch) then
+                applyPct((i.Position.X-desc.AbsolutePosition.X)/desc.AbsoluteSize.X)
+            end
+        end)
+
+        if valLbl then
+            local tbox = Instance.new("TextBox")
+            tbox.Name = "SliderInput"; tbox.Size = UDim2.new(1,0,1,0)
+            tbox.Position = UDim2.fromOffset(0,0)
+            tbox.BackgroundColor3 = Color3.fromRGB(20,0,34)
+            tbox.BackgroundTransparency = 1
+            tbox.TextColor3 = Color3.fromRGB(204,136,255)
+            tbox.Font = Enum.Font.GothamBold; tbox.TextSize = 10
+            tbox.Text = ""; tbox.PlaceholderText = "0"
+            tbox.ClearTextOnFocus = true; tbox.BorderSizePixel = 0
+            tbox.ZIndex = (valLbl.ZIndex or 1)+2; tbox.Visible = false
+            tbox.Parent = valLbl
+            Instance.new("UICorner", tbox).CornerRadius = UDim.new(0,3)
+
+            valLbl.InputBegan:Connect(function(i)
+                if i.UserInputType==Enum.UserInputType.MouseButton1
+                or i.UserInputType==Enum.UserInputType.Touch then
+                    tbox.Text=valLbl.Text; tbox.Visible=true
+                    tbox.BackgroundTransparency=0; task.defer(function() tbox:CaptureFocus() end)
+                end
+            end)
+            tbox.FocusLost:Connect(function()
+                tbox.Visible=false; tbox.BackgroundTransparency=1
+                local v = tonumber(tbox.Text)
+                if v then
+                    v = math.clamp(math.floor(v), minV, maxV)
+                    applyPct((v-minV)/(maxV-minV))
+                end
+                tbox.Text=""
+            end)
+            valLbl.MouseEnter:Connect(function()
+                TS:Create(valLbl, TweenInfo.new(0.1), {TextColor3=Color3.fromRGB(204,136,255)}):Play()
+            end)
+            valLbl.MouseLeave:Connect(function()
+                TS:Create(valLbl, TweenInfo.new(0.1), {TextColor3=Color3.fromRGB(68,68,68)}):Play()
+            end)
+        end
+    end
+
+    -- Dropdown
+    local tiDD        = TweenInfo.new(0.14, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+    local openDDPanel = nil
+    local justOpened  = false
+
+    UIS.InputBegan:Connect(function(i)
+        if openDDPanel == nil then return end
+        if i.UserInputType ~= Enum.UserInputType.MouseButton1
+        and i.UserInputType ~= Enum.UserInputType.Touch then return end
+        if justOpened then justOpened=false; return end
+        openDDPanel.Visible=false; openDDPanel=nil
+    end)
+
+    for _, dd in ipairs(Cont:GetDescendants()) do
+        if dd.Name ~= "DropFrame" then continue end
+        local panelName = dd:GetAttribute("DDPanelName"); if not panelName then continue end
+        local panel = SG:FindFirstChild(panelName)
+        if not panel then continue end
+        local selTxt = dd:FindFirstChild("SelTxt")
+        local arrLbl = dd:FindFirstChild("ArrIcon")
+
+        local function repositionPanel()
+            local abs = dd.AbsolutePosition; local ddH = dd.AbsoluteSize.Y; local ddW = dd.AbsoluteSize.X
+            local vp  = Camera.ViewportSize
+            local pH  = panel:GetAttribute("PanelH") or panel.AbsoluteSize.Y
+            local pw  = math.max(ddW, 120)
+            local px  = safeClamp(abs.X, 8, vp.X-pw-8)
+            local spaceBelow = vp.Y-(abs.Y+ddH)-8
+            local py = spaceBelow >= pH and abs.Y+ddH+4 or abs.Y-pH-4
+            py = safeClamp(py, 8, vp.Y-pH-8)
+            panel.Position = UDim2.fromOffset(px,py); panel.Size = UDim2.fromOffset(pw,pH)
+        end
+
+        local dHandle = panel:FindFirstChild("DragHandle")
+        if dHandle then
+            dHandle.InputBegan:Connect(function(i)
+                if i.UserInputType ~= Enum.UserInputType.MouseButton1
+                and i.UserInputType ~= Enum.UserInputType.Touch then return end
+                if activeDrag then return end
+                activeDrag = {
+                    dragObj=panel, startCurX=i.Position.X, startCurY=i.Position.Y,
+                    startObjX=panel.AbsolutePosition.X, startObjY=panel.AbsolutePosition.Y,
+                    moved=false, isWin=false,
+                }
+            end)
+            dHandle.InputEnded:Connect(function(i)
+                if i.UserInputType ~= Enum.UserInputType.MouseButton1
+                and i.UserInputType ~= Enum.UserInputType.Touch then return end
+                if activeDrag and activeDrag.dragObj==panel then activeDrag=nil end
+            end)
+        end
+
+        dd.InputBegan:Connect(function(i)
+            if i.UserInputType ~= Enum.UserInputType.MouseButton1
+            and i.UserInputType ~= Enum.UserInputType.Touch then return end
+            local wasOpen = panel.Visible
+            if openDDPanel and openDDPanel ~= panel then
+                openDDPanel.Visible=false
+                local ownerDD = Cont:FindFirstChild(openDDPanel:GetAttribute("DDOwner") or "", true)
+                local ownerArr = ownerDD and ownerDD:FindFirstChild("ArrIcon")
+                if ownerArr then ownerArr.Rotation=0 end
+            end
+            if not wasOpen then
+                repositionPanel(); panel.Visible=true; openDDPanel=panel
+                justOpened=true; if arrLbl then arrLbl.Rotation=180 end
+            else
+                panel.Visible=false; openDDPanel=nil
+                if arrLbl then arrLbl.Rotation=0 end
+            end
+        end)
+
+        for _, opt in ipairs(panel:GetChildren()) do
+            if not opt:IsA("TextButton") then continue end
+            local optTxt = opt:FindFirstChild("OptTxt")
+            local selBar = opt:FindFirstChild("SelBar")
+            opt.MouseEnter:Connect(function()
+                TS:Create(opt, tiDD, {BackgroundColor3=Color3.fromRGB(32,0,52)}):Play()
+            end)
+            opt.MouseLeave:Connect(function()
+                local isSel = selBar and selBar.Visible
+                TS:Create(opt, tiDD, {BackgroundColor3=isSel and Color3.fromRGB(26,0,40) or Color3.fromRGB(18,0,30)}):Play()
+            end)
+            opt.InputBegan:Connect(function(i)
+                if i.UserInputType ~= Enum.UserInputType.MouseButton1
+                and i.UserInputType ~= Enum.UserInputType.Touch then return end
+                justOpened=true
+                if selTxt and optTxt then selTxt.Text=optTxt.Text end
+                for _, o in ipairs(panel:GetChildren()) do
+                    if not o:IsA("TextButton") then continue end
+                    local oBar=o:FindFirstChild("SelBar"); local oTxt=o:FindFirstChild("OptTxt")
+                    local oCheck=o:FindFirstChild("Check"); local isThis=(o==opt)
+                    if oBar   then oBar.Visible=isThis end
+                    if oCheck then oCheck.Text=isThis and "✓" or "" end
+                    if oTxt   then TS:Create(oTxt,tiDD,{TextColor3=isThis and Color3.fromRGB(180,120,240) or Color3.fromRGB(130,100,160)}):Play() end
+                    TS:Create(o,tiDD,{BackgroundColor3=isThis and Color3.fromRGB(26,0,40) or Color3.fromRGB(18,0,30)}):Play()
+                end
+                panel.Visible=false; openDDPanel=nil
+                if arrLbl then arrLbl.Rotation=0 end
+            end)
+        end
+    end
+
+    -- Float btn
+    local i5panel = Cont:FindFirstChild("FloatCfgPanel", true)
+    local fbLocked = false
+
+    for _, desc in ipairs(Cont:GetDescendants()) do
+        if desc.Name == "Btn_Float" then
+            local isShow = false
+            if i5panel then i5panel.Visible=false end
+            desc.MouseButton1Click:Connect(function()
+                isShow = not isShow
+                FloatBtn.Visible = isShow
+                desc.BackgroundColor3 = isShow and Color3.fromRGB(61,0,107) or Color3.fromRGB(15,0,26)
+                desc.TextColor3 = isShow and Color3.fromRGB(204,136,255) or Color3.fromRGB(153,68,221)
+                if i5panel then i5panel.Visible=isShow end
+            end)
+        end
+    end
+
+    if i5panel then
+        local function fsl(bgName, minV, maxV, onChange)
+            local bg = i5panel:FindFirstChild(bgName, true); if not bg then return end
+            local fill=bg:FindFirstChild("Fill"); local knob=bg:FindFirstChild("Knob")
+            local valLbl=i5panel:FindFirstChild(bgName:gsub("BG","Val"), true)
+            local sl=false
+            local function ap(p)
+                p=math.clamp(p,0,1)
+                if fill then fill.Size=UDim2.new(p,0,1,0) end
+                if knob then knob.Position=UDim2.new(p,-5,0.5,-5) end
+                local v=math.floor(minV+(maxV-minV)*p)
+                if valLbl then valLbl.Text=tostring(v).."px" end
+                if onChange then onChange(v) end
+            end
+            bg.InputBegan:Connect(function(i)
+                if i.UserInputType==Enum.UserInputType.MouseButton1
+                or i.UserInputType==Enum.UserInputType.Touch then
+                    sl=true; ap((i.Position.X-bg.AbsolutePosition.X)/bg.AbsoluteSize.X) end
+            end)
+            bg.InputEnded:Connect(function(i)
+                if i.UserInputType==Enum.UserInputType.MouseButton1
+                or i.UserInputType==Enum.UserInputType.Touch then sl=false end
+            end)
+            UIS.InputChanged:Connect(function(i)
+                if sl and (i.UserInputType==Enum.UserInputType.MouseMovement
+                or i.UserInputType==Enum.UserInputType.Touch) then
+                    ap((i.Position.X-bg.AbsolutePosition.X)/bg.AbsoluteSize.X) end
+            end)
+        end
+        fsl("WBG",50,200,function(v) FloatBtn.Size=UDim2.fromOffset(v,FloatBtn.Size.Y.Offset) end)
+        fsl("HBG",28,100,function(v) FloatBtn.Size=UDim2.fromOffset(FloatBtn.Size.X.Offset,v) end)
+        local li=i5panel:FindFirstChild("LblInp",true)
+        if li then li:GetPropertyChangedSignal("Text"):Connect(function() FloatBtn.Text=li.Text end) end
+        local lb=i5panel:FindFirstChild("LockBtn",true)
+        if lb then lb.MouseButton1Click:Connect(function()
+            fbLocked=not fbLocked
+            lb.Text=fbLocked and "Travado" or "Livre"
+            lb.TextColor3=fbLocked and Color3.fromRGB(119,0,187) or Color3.fromRGB(68,0,102)
+        end) end
+        local sv=i5panel:FindFirstChild("SaveBtn",true)
+        if sv then sv.MouseButton1Click:Connect(function()
+            sv.Text="Salvo!"; task.delay(1.5,function() if sv then sv.Text="Save Pos" end end)
+        end) end
+    end
+
+    -- Float drag
+    FloatBtn.InputBegan:Connect(function(i)
+        if i.UserInputType ~= Enum.UserInputType.MouseButton1
+        and i.UserInputType ~= Enum.UserInputType.Touch then return end
+        if fbLocked or activeDrag then return end
+        local par = FloatBtn.Parent; local parAbs = par and par.AbsolutePosition or Vector2.zero
+        activeDrag = {
+            dragObj=FloatBtn, startCurX=i.Position.X, startCurY=i.Position.Y,
+            startObjX=FloatBtn.AbsolutePosition.X-parAbs.X,
+            startObjY=FloatBtn.AbsolutePosition.Y-parAbs.Y,
+            moved=false, isWin=false,
+        }; lockCamera()
+    end)
+    FloatBtn.InputEnded:Connect(function(i)
+        if i.UserInputType ~= Enum.UserInputType.MouseButton1
+        and i.UserInputType ~= Enum.UserInputType.Touch then return end
+        if activeDrag and activeDrag.dragObj==FloatBtn then activeDrag=nil; unlockCamera() end
+    end)
+
+    -- Keybinds nos itens
+    for _, desc in ipairs(Cont:GetDescendants()) do
+        if desc.Name == "KeybindBtn" then
+            local listening=false
+            local function startListen()
+                if listening then return end
+                listening=true; desc.Text="..."; desc.TextColor3=Color3.fromRGB(204,136,255)
+                local con; con=UIS.InputBegan:Connect(function(i,gp)
+                    if gp then return end
+                    if i.UserInputType==Enum.UserInputType.Keyboard then
+                        desc.Text=i.KeyCode.Name:sub(1,6); desc.TextColor3=Color3.fromRGB(153,68,221)
+                        listening=false; con:Disconnect()
+                    end
+                end)
+            end
+            desc.MouseButton1Click:Connect(startListen)
+            desc.InputBegan:Connect(function(i)
+                if i.UserInputType==Enum.UserInputType.Touch then startListen() end
+            end)
+        end
+    end
+
+    -- Settings keybind (abrir/fechar)
+    local skbBtn2 = Cont:FindFirstChild("SettingsKeybindBtn", true)
+    if skbBtn2 then
+        local listening=false
+        local function startKbListen()
+            if listening then return end
+            listening=true; skbBtn2.Text="..."; skbBtn2.TextColor3=Color3.fromRGB(204,136,255)
+            local con; con=UIS.InputBegan:Connect(function(i,gp)
+                if gp then return end
+                if i.UserInputType==Enum.UserInputType.Keyboard then
+                    currentKey=i.KeyCode; skbBtn2.Text=i.KeyCode.Name:sub(1,8)
+                    skbBtn2.TextColor3=Color3.fromRGB(153,68,221); listening=false; con:Disconnect()
+                end
+            end)
+        end
+        skbBtn2.MouseButton1Click:Connect(startKbListen)
+        skbBtn2.InputBegan:Connect(function(i)
+            if i.UserInputType==Enum.UserInputType.Touch then startKbListen() end
+        end)
+    end
+
+    -- Sistema de configurações
+    local configs={}; local selectedCfg=nil
+    local cfgDropPanel = Cont:FindFirstChild("CfgDropPanel", true)
+    local selLbl       = Cont:FindFirstChild("SelLbl", true)
+    local autoVal      = Cont:FindFirstChild("AutoVal", true)
+
+    local function refreshCfgList()
+        if not cfgDropPanel then return end
+        for _, c in ipairs(cfgDropPanel:GetChildren()) do
+            if c:IsA("TextButton") or (c:IsA("TextLabel") and c.Name=="EmptyLbl") then c:Destroy() end
+        end
+        if #configs==0 then
+            local el=Instance.new("TextLabel",cfgDropPanel)
+            el.Name="EmptyLbl"; el.Size=UDim2.new(1,0,0,24); el.BackgroundTransparency=1
+            el.Text="Nenhuma config salva"; el.TextColor3=Color3.fromRGB(68,68,68)
+            el.TextXAlignment=Enum.TextXAlignment.Center; el.Font=Enum.Font.Gotham; el.TextSize=11
+            el.LayoutOrder=1; el.BorderSizePixel=0; return
+        end
+        for i, cfg in ipairs(configs) do
+            local ob=Instance.new("TextButton",cfgDropPanel)
+            ob.Size=UDim2.new(1,0,0,28); ob.BackgroundTransparency=1
+            ob.Text=(cfg.auto and "* " or "  ")..cfg.name
+            ob.TextColor3=cfg.name==selectedCfg and Color3.fromRGB(176,106,238) or Color3.fromRGB(136,136,136)
+            ob.TextXAlignment=Enum.TextXAlignment.Left; ob.Font=Enum.Font.Gotham; ob.TextSize=12
+            ob.LayoutOrder=i; ob.BorderSizePixel=0; ob.ZIndex=15
+            Instance.new("UIPadding",ob).PaddingLeft=UDim.new(0,8)
+            ob.MouseButton1Click:Connect(function()
+                selectedCfg=cfg.name
+                if selLbl then selLbl.Text=cfg.name end
+                cfgDropPanel.Visible=false; refreshCfgList()
+            end)
+        end
+        if autoVal then
+            local auto=nil
+            for _, c in ipairs(configs) do if c.auto then auto=c; break end end
+            autoVal.Text=auto and '"'..auto.name..'"' or '"none"'
+        end
+    end
+
+    local selFrame2 = Cont:FindFirstChild("SelectFrame", true)
+    if selFrame2 and cfgDropPanel then
+        local selBtn=Instance.new("TextButton",selFrame2)
+        selBtn.Size=UDim2.new(1,0,1,0); selBtn.BackgroundTransparency=1
+        selBtn.Text=""; selBtn.ZIndex=15; selBtn.BorderSizePixel=0
+        selBtn.MouseButton1Click:Connect(function() cfgDropPanel.Visible=not cfgDropPanel.Visible end)
+    end
+
+    local saveBtn2  = Cont:FindFirstChild("SaveCfgBtn", true)
+    local cfgInp2   = Cont:FindFirstChild("CfgInput", true)
+    if saveBtn2 then saveBtn2.MouseButton1Click:Connect(function()
+        local name = cfgInp2 and cfgInp2.Text:match("^%s*(.-)%s*$") or ""
+        if name~="" then
+            table.insert(configs,{name=name,auto=false})
+            if cfgInp2 then cfgInp2.Text="" end; refreshCfgList()
+        end
+    end) end
+
+    local deleteBtn2 = Cont:FindFirstChild("DeleteBtn", true)
+    if deleteBtn2 then deleteBtn2.MouseButton1Click:Connect(function()
+        if not selectedCfg then return end
+        for i, c in ipairs(configs) do if c.name==selectedCfg then table.remove(configs,i); break end end
+        selectedCfg=nil; if selLbl then selLbl.Text="-- select config --" end; refreshCfgList()
+    end) end
+
+    local loadBtn2 = Cont:FindFirstChild("LoadBtn", true)
+    if loadBtn2 then loadBtn2.MouseButton1Click:Connect(function()
+        if selectedCfg then print("Load: "..selectedCfg) end
+    end) end
+
+    local autoFrameCtrl = Win:FindFirstChild("AutoFrame", true)
+    if autoFrameCtrl then
+        local autoTog2 = autoFrameCtrl:FindFirstChild("ToggleFrame")
+        if autoTog2 then
+            autoTog2.AttributeChanged:Connect(function(attr)
+                if attr~="IsOn" then return end
+                local autoOn = autoTog2:GetAttribute("IsOn")
+                if autoVal then
+                    local auto=nil
+                    for _, c in ipairs(configs) do if c.auto then auto=c; break end end
+                    autoVal.Text = autoOn and (auto and '"'..auto.name..'"' or '"none"') or '"none"'
+                end
+            end)
+        end
+    end
+
+    local updateBtn2 = Cont:FindFirstChild("UpdateBtn", true)
+    if updateBtn2 then updateBtn2.MouseButton1Click:Connect(function()
+        if not selectedCfg then return end
+        for _, c in ipairs(configs) do c.auto=(c.name==selectedCfg) end
+        refreshCfgList()
+    end) end
+
+    refreshCfgList()
+end
